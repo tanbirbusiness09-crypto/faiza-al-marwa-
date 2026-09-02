@@ -18,7 +18,7 @@
     --text-soft: #4B5750;
     --radius-s: 4px;
     --radius-m: 8px;
-    --maxw: 1480px;
+    --maxw: 1240px;
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
   }
@@ -65,14 +65,14 @@
   max-width: var(--maxw);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 @media (max-width: 640px) {
   .container-custom {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
