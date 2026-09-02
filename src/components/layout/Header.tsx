@@ -185,25 +185,25 @@ export default function Header() {
           <BrandLogo />
 
           {/* Desktop Navigation Links with Structured Sub-Category Dropdowns */}
-          <nav className="hidden xl:flex items-center gap-1.5">
+          <nav className="hidden xl:flex items-center gap-1 flex-shrink-0">
             {/* 1. Home */}
             <Link
               href="/#home"
-              className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-ink/90 hover:text-teal-deep px-3.5 py-2 rounded-xl hover:bg-teal-deep/8 transition-all duration-200"
+              className="inline-flex items-center gap-2 text-[13px] font-semibold text-ink/90 hover:text-teal-deep px-3 py-2 rounded-xl hover:bg-teal-deep/8 transition-all duration-200 whitespace-nowrap flex-shrink-0"
             >
               <FontAwesomeIcon icon={faHouse} className="w-3.5 h-3.5 text-teal-deep" />
-              <span>{t('nav_home', 'Home')}</span>
+              <span className="whitespace-nowrap">{t('nav_home', 'Home')}</span>
             </Link>
 
             {/* 2. Services Dropdown (Mega Sub-Category Menu) */}
             <div
-              className="relative"
+              className="relative flex-shrink-0"
               onMouseEnter={() => handleMouseEnter('services')}
               onMouseLeave={handleMouseLeave}
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
-                className={`inline-flex items-center gap-2 text-[13.5px] font-semibold px-3.5 py-2 rounded-xl transition-all duration-200 ${
+                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'services'
                     ? 'bg-teal-deep text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
@@ -215,7 +215,7 @@ export default function Header() {
                     activeDropdown === 'services' ? 'text-gold-light' : 'text-teal-deep'
                   }`}
                 />
-                <span>{t('nav_services', 'Services')}</span>
+                <span className="whitespace-nowrap">{t('nav_services', 'Services')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
@@ -302,13 +302,13 @@ export default function Header() {
 
             {/* 3. Travel & Destinations Dropdown */}
             <div
-              className="relative"
+              className="relative flex-shrink-0"
               onMouseEnter={() => handleMouseEnter('travel')}
               onMouseLeave={handleMouseLeave}
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'travel' ? null : 'travel')}
-                className={`inline-flex items-center gap-2 text-[13.5px] font-semibold px-3.5 py-2 rounded-xl transition-all duration-200 ${
+                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'travel'
                     ? 'bg-teal-deep text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
@@ -320,7 +320,7 @@ export default function Header() {
                     activeDropdown === 'travel' ? 'text-gold-light' : 'text-teal-deep'
                   }`}
                 />
-                <span>{t('nav_travel_dest', 'Travel & Tours')}</span>
+                <span className="whitespace-nowrap">{t('nav_travel_dest', 'Travel & Tours')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
@@ -367,13 +367,13 @@ export default function Header() {
 
             {/* 4. Company / About Dropdown */}
             <div
-              className="relative"
+              className="relative flex-shrink-0"
               onMouseEnter={() => handleMouseEnter('company')}
               onMouseLeave={handleMouseLeave}
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
-                className={`inline-flex items-center gap-2 text-[13.5px] font-semibold px-3.5 py-2 rounded-xl transition-all duration-200 ${
+                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'company'
                     ? 'bg-teal-deep text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
@@ -385,7 +385,7 @@ export default function Header() {
                     activeDropdown === 'company' ? 'text-gold-light' : 'text-teal-deep'
                   }`}
                 />
-                <span>{t('nav_company', 'Company')}</span>
+                <span className="whitespace-nowrap">{t('nav_company', 'Company')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
@@ -432,29 +432,29 @@ export default function Header() {
           </nav>
 
           {/* Action Buttons (Search, Language, Worker Status, Contact CTA) */}
-          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             {/* Search Icon Button */}
             <motion.button
               whileHover={{ scale: 1.06, y: -1 }}
               whileTap={{ scale: 0.94 }}
               onClick={() => setSearchOpen(true)}
-              className="w-9 h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white hover:border-teal-deep hover:bg-teal-deep/5 text-teal-deep hover:text-gold shadow-2xs transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white hover:border-teal-deep hover:bg-teal-deep/5 text-teal-deep hover:text-gold shadow-2xs transition-colors flex-shrink-0"
               aria-label="Search site"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} className="w-3.5 h-3.5" />
             </motion.button>
 
             {/* Language Switcher */}
-            <div className="relative">
+            <div className="relative flex-shrink-0">
               <motion.button
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl border border-paper-line hover:border-teal-deep bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-2 rounded-xl border border-paper-line hover:border-teal-deep bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors whitespace-nowrap flex-shrink-0"
                 aria-label="Change language"
               >
                 <FontAwesomeIcon icon={faGlobe} className="w-3.5 h-3.5 text-teal-deep" />
-                <span className="font-mono text-[11.5px] font-bold text-teal-deep">{language.toUpperCase()}</span>
+                <span className="font-mono text-[11px] font-bold text-teal-deep whitespace-nowrap">{language.toUpperCase()}</span>
                 <FontAwesomeIcon icon={faChevronDown} className="w-2.5 h-2.5 text-softText/70" />
               </motion.button>
 
@@ -494,10 +494,10 @@ export default function Header() {
             </div>
 
             {/* Worker Status Button (Next to Contact Us) */}
-            <motion.div whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.96 }}>
+            <motion.div whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
               <Link
                 href="/worker-status"
-                className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-teal-deep/20 bg-paper-white hover:bg-teal-deep/5 text-ink hover:text-teal-deep font-bold text-xs sm:text-sm shadow-2xs hover:border-teal-deep transition-all duration-200"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl border border-teal-deep/25 bg-paper-white hover:bg-teal-deep/5 text-ink hover:text-teal-deep font-bold text-xs shadow-2xs hover:border-teal-deep transition-all duration-200 whitespace-nowrap flex-shrink-0"
               >
                 <FontAwesomeIcon icon={faIdCardClip} className="w-3.5 h-3.5 text-teal-deep" />
                 <span className="whitespace-nowrap">{t('nav_tracking', 'Worker Status')}</span>
@@ -505,10 +505,10 @@ export default function Header() {
             </motion.div>
 
             {/* Prominent Deep Teal Contact CTA Button */}
-            <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }}>
+            <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
               <button
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-2 px-3.5 sm:px-4.5 py-2 sm:py-2.5 rounded-xl bg-teal-deep hover:bg-teal-mid text-white border border-teal-line font-bold text-xs sm:text-sm shadow-md shadow-teal-deep/15 hover:shadow-lg hover:shadow-teal-deep/25 transition-all duration-200"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-teal-deep hover:bg-teal-mid text-white border border-teal-line font-bold text-xs shadow-md shadow-teal-deep/15 hover:shadow-lg hover:shadow-teal-deep/25 transition-all duration-200 whitespace-nowrap flex-shrink-0"
               >
                 <FontAwesomeIcon icon={faPhoneVolume} className="w-3.5 h-3.5 text-gold-light" />
                 <span className="whitespace-nowrap">{t('nav_contact', 'Contact Us')}</span>
@@ -518,7 +518,7 @@ export default function Header() {
             {/* Mobile Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden w-9 h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white text-ink hover:text-teal-deep hover:border-teal-deep transition-colors"
+              className="xl:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white text-ink hover:text-teal-deep hover:border-teal-deep transition-colors flex-shrink-0"
               aria-label="Toggle navigation menu"
             >
               <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} className="w-4 h-4" />
