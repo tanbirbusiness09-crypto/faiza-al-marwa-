@@ -84,24 +84,23 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline (2 Lines Exact) */}
           <motion.h1
             variants={staggerItem}
-            className="text-4xl sm:text-5xl lg:text-6xl text-ink font-display font-bold leading-[1.12] tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px]"
           >
             Beyond Journeys.<br />
-            Building Futures.<br />
-            <span className="text-gold font-bold">Together.</span>
+            Building Futures. <span className="text-gold font-bold">Together.</span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Subtitle (3 Lines Clean Layout) */}
           <motion.p
             variants={staggerItem}
-            className="text-base sm:text-lg text-text-soft leading-relaxed max-w-xl"
+            className="text-[14px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.65] max-w-[530px]"
           >
             {t(
               'hero_lead',
-              'From a single flight to a full corporate setup — FAIZA AL MARWA is your trusted partner for travel, business, visa, manpower and digital services.'
+              'FAIZA AL MARWA brings travel, business setup, visa, manpower and digital services together under one roof — so every request, from a single flight to a full corporate workforce, starts in the same place.'
             )}
           </motion.p>
 
