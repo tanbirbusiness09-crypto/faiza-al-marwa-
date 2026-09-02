@@ -365,16 +365,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* 4. Worker Status Tracker (Direct Highlight Link) */}
-            <Link
-              href="/worker-status"
-              className="inline-flex items-center gap-2 text-[13.5px] font-semibold text-ink/90 hover:text-teal-deep px-3.5 py-2 rounded-xl hover:bg-teal-deep/8 transition-all duration-200"
-            >
-              <FontAwesomeIcon icon={faIdCardClip} className="w-3.5 h-3.5 text-teal-deep" />
-              <span>{t('nav_tracking', 'Status Tracker')}</span>
-            </Link>
-
-            {/* 5. Company / About Dropdown */}
+            {/* 4. Company / About Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter('company')}
@@ -440,8 +431,8 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Action Buttons (Search, Language, Contact CTA) */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          {/* Action Buttons (Search, Language, Worker Status, Contact CTA) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
             {/* Search Icon Button */}
             <motion.button
               whileHover={{ scale: 1.06, y: -1 }}
@@ -459,7 +450,7 @@ export default function Header() {
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-paper-line hover:border-teal-deep bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors"
+                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl border border-paper-line hover:border-teal-deep bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors"
                 aria-label="Change language"
               >
                 <FontAwesomeIcon icon={faGlobe} className="w-3.5 h-3.5 text-teal-deep" />
@@ -502,11 +493,22 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
+            {/* Worker Status Button (Next to Contact Us) */}
+            <motion.div whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.96 }}>
+              <Link
+                href="/worker-status"
+                className="hidden sm:inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl border border-teal-deep/20 bg-paper-white hover:bg-teal-deep/5 text-ink hover:text-teal-deep font-bold text-xs sm:text-sm shadow-2xs hover:border-teal-deep transition-all duration-200"
+              >
+                <FontAwesomeIcon icon={faIdCardClip} className="w-3.5 h-3.5 text-teal-deep" />
+                <span className="whitespace-nowrap">{t('nav_tracking', 'Worker Status')}</span>
+              </Link>
+            </motion.div>
+
             {/* Prominent Deep Teal Contact CTA Button */}
             <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }}>
               <button
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-teal-deep hover:bg-teal-mid text-white border border-teal-line font-bold text-xs sm:text-sm shadow-md shadow-teal-deep/15 hover:shadow-lg hover:shadow-teal-deep/25 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-3.5 sm:px-4.5 py-2 sm:py-2.5 rounded-xl bg-teal-deep hover:bg-teal-mid text-white border border-teal-line font-bold text-xs sm:text-sm shadow-md shadow-teal-deep/15 hover:shadow-lg hover:shadow-teal-deep/25 transition-all duration-200"
               >
                 <FontAwesomeIcon icon={faPhoneVolume} className="w-3.5 h-3.5 text-gold-light" />
                 <span className="whitespace-nowrap">{t('nav_contact', 'Contact Us')}</span>
