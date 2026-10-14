@@ -85,10 +85,21 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline (Typewriter) — sr-only on mobile (hidden visually, kept for SEO/a11y) */}
+          {/* Mobile copy: visually hidden, kept for crawlers & screen readers */}
+          <motion.div variants={staggerItem} className="sr-only sm:hidden">
+            <h1>Beyond Journeys. Building Futures. Together.</h1>
+            <p>
+              {t(
+                'hero_lead',
+                'FAIZA AL MARWA delivers MISA investor licensing, certified manpower recruitment, international tour packages, visa processing and digital services under one roof — so every business and travel request starts in the same place.'
+              )}
+            </p>
+          </motion.div>
+
+          {/* Headline (Typewriter) — desktop / tablet only */}
           <motion.h1
             variants={staggerItem}
-            className="sr-only sm:not-sr-only block text-[27px] leading-[1.18] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-[54px] text-ink font-display font-bold tracking-tight max-w-[580px] min-h-[2.4em]"
+            className="hidden sm:block text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px] sm:min-h-[2.4em]"
           >
             <TypeWriter
               parts={[
@@ -101,10 +112,10 @@ export default function HeroSection() {
             />
           </motion.h1>
 
-          {/* Subtitle — hidden on mobile (sr-only keeps it crawlable) */}
+          {/* Subtitle — desktop / tablet only */}
           <motion.p
             variants={staggerItem}
-            className="sr-only sm:not-sr-only text-[13.5px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.6] sm:leading-[1.65] max-w-[530px]"
+            className="hidden sm:block text-[15px] md:text-[15.5px] text-text-soft leading-[1.65] max-w-[530px]"
           >
             {t(
               'hero_lead',
@@ -112,28 +123,30 @@ export default function HeroSection() {
             )}
           </motion.p>
 
-          {/* CTA Buttons — full-width app style on mobile */}
+          {/* CTA Buttons — 2-up app style on mobile, inline on desktop */}
           <motion.div
             variants={staggerItem}
-            className="grid grid-cols-1 sm:flex sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-3.5 pt-1 sm:pt-2"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2"
           >
-            <motion.div {...hoverButton} className="w-full sm:w-auto">
+            <motion.div {...hoverButton} className="min-w-0">
               <Link
                 href="#featured-services"
-                className="btn-app bg-navy hover:bg-navy-light text-white shadow-md shadow-navy/25"
+                className="btn-app bg-navy hover:bg-navy-light text-white border border-navy-light shadow-md shadow-navy/30 rounded-xl"
               >
-                <span>{t('cta_explore_services', 'Explore Services')}</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="hidden sm:inline">Explore Services</span>
+                <span className="sm:hidden">Explore</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </Link>
             </motion.div>
 
-            <motion.div {...hoverButton} className="w-full sm:w-auto">
+            <motion.div {...hoverButton} className="min-w-0">
               <Link
                 href="#booking"
-                className="btn-app border border-ink/40 bg-paper-white hover:bg-paper text-ink shadow-2xs"
+                className="btn-app bg-paper-white hover:bg-navy hover:text-white border-2 border-navy/20 hover:border-navy text-navy shadow-2xs rounded-xl"
               >
-                <CalendarCheck className="w-4 h-4 text-navy" />
-                <span>{t('cta_book_now', 'Book Now')}</span>
+                <CalendarCheck className="w-4 h-4 shrink-0" />
+                <span className="hidden sm:inline">Book an Appointment</span>
+                <span className="sm:hidden">Book Now</span>
               </Link>
             </motion.div>
           </motion.div>
