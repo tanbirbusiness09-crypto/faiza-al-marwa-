@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { useLanguage } from '@/context/LanguageContext';
 import { TRAVEL_PACKAGES_DATA } from '@/lib/data';
-import { Sparkles } from 'lucide-react';
 import { smoothEase, staggerContainer, staggerItem, hoverButton } from '@/lib/animations';
 
 export default function TravelTickets() {
@@ -22,7 +22,7 @@ export default function TravelTickets() {
       >
         <div className="eyebrow">{t('travel_eyebrow', 'Ready-made trips')}</div>
         <h2 className="text-3xl sm:text-4xl text-ink font-display font-bold">
-          {t('travel_title', 'Featured Travel Experiences')}
+          {t('travel_title', 'International Tour Packages')}
         </h2>
       </motion.div>
 
@@ -39,59 +39,36 @@ export default function TravelTickets() {
             variants={staggerItem}
             whileHover={{ y: -6, scale: 1.01 }}
             transition={{ duration: 0.22, ease: smoothEase }}
-            className="bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+            className="bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
           >
-            {/* Ticket Top */}
-            <div className="p-6">
-              <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-gold">
-                  {pkg.category}
-                </span>
-                {pkg.featured && (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold bg-gold/15 text-gold px-2 py-0.5 rounded-full">
-                    <Sparkles className="w-2.5 h-2.5" />
-                    <span>Popular</span>
-                  </span>
-                )}
-              </div>
-
-              <h3 className="text-lg font-bold text-ink font-display min-h-[52px]">
-                {pkg.title}
-              </h3>
-
-              {/* Route Line */}
-              <div className="flex items-center gap-3 my-4 py-2 border-y border-paper-line/60">
-                <span className="font-display font-bold text-base text-ink">{pkg.from}</span>
-                <span className="route-line" />
-                <span className="font-display font-bold text-base text-ink">{pkg.to}</span>
-              </div>
-
-              <div className="text-xs text-softText">
-                Duration: <strong className="text-ink">{pkg.duration}</strong>
-              </div>
+            {/* Destination Image + Place */}
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={pkg.image}
+                alt={pkg.place}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+              <span className="absolute left-4 bottom-3 font-display font-bold text-xl text-white drop-shadow">
+                {pkg.place}
+              </span>
             </div>
 
-            {/* Perforation */}
-            <div className="border-t-2 border-dashed border-paper-line mx-6 relative">
-              <span className="w-4 h-4 rounded-full bg-paper absolute -left-8 -top-2 border border-paper-line/40" />
-              <span className="w-4 h-4 rounded-full bg-paper absolute -right-8 -top-2 border border-paper-line/40" />
-            </div>
-
-            {/* Ticket Bottom */}
-            <div className="p-6 bg-paper/30 flex items-center justify-between">
-              <div>
-                <span className="block text-[10px] uppercase text-softText font-medium">Starting From</span>
-                <strong className="font-display text-xl text-teal-deep font-bold">
-                  SAR {pkg.price}
-                </strong>
-              </div>
-
+            {/* Book Now button with package name + price */}
+            <div className="p-4 mt-auto">
               <motion.div {...hoverButton}>
                 <Link
                   href="#booking"
-                  className="px-4 py-2 bg-gold hover:bg-gold-light text-ink font-bold text-xs rounded-lg shadow-sm block"
+                  className="block w-full px-4 py-3 bg-gold hover:bg-gold-light text-ink rounded-lg shadow-sm text-center transition-colors"
                 >
-                  {t('cta_book_now', 'Book Now')}
+                  <span className="block text-xs font-semibold leading-snug line-clamp-2">
+                    {pkg.title}
+                  </span>
+                  <strong className="block font-display text-lg font-bold leading-tight mt-0.5">
+                    SAR {pkg.price}
+                  </strong>
                 </Link>
               </motion.div>
             </div>

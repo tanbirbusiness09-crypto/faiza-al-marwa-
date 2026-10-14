@@ -20,6 +20,8 @@ export interface TravelPackage {
   id: string;
   category: string;
   title: string;
+  place: string;
+  image: string;
   from: string;
   to: string;
   duration: string;
