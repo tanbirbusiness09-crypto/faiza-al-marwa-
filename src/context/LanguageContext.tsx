@@ -8,6 +8,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string, fallback?: string) => string;
+  tx: (en: string, ar: string, bn: string) => string;
   isRTL: boolean;
 }
 
@@ -52,8 +53,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const isRTL = language === 'ar';
 
+  // Inline 3-language string: tx('English', 'العربية', 'বাংলা')
+  const tx = (en: string, ar: string, bn: string): string => {
+    if (language === 'ar') return ar || en;
+    if (language === 'bn') return bn || en;
+    return en;
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, tx, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );
