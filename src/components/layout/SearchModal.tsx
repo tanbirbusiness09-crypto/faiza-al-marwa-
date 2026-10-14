@@ -12,17 +12,16 @@ interface SearchModalProps {
 }
 
 const SEARCH_ITEMS = [
-  { tag: 'Service', label: 'Business & Investment Setup', href: '/#featured-services' },
+  { tag: 'Service', label: 'Investor License & Business Setup', href: '/#featured-services' },
   { tag: 'Service', label: 'Visa & Immigration Services', href: '/#featured-services' },
-  { tag: 'Service', label: 'Flight & Hotel Bookings', href: '/#booking' },
-  { tag: 'Service', label: 'Umrah Packages & Ziyarah', href: '/#travel' },
+  { tag: 'Service', label: 'International Tour Packages', href: '/#travel' },
   { tag: 'Service', label: 'Manpower Supply & Mobilization', href: '/#manpower' },
-  { tag: 'Destination', label: 'Madinah Al-Munawwarah', href: '/#destinations' },
-  { tag: 'Destination', label: 'Jeddah Coastal & Business', href: '/#destinations' },
-  { tag: 'Destination', label: 'Riyadh Capital City', href: '/#destinations' },
-  { tag: 'Destination', label: 'Dubai Business & Tourism', href: '/#destinations' },
-  { tag: 'Destination', label: 'Istanbul Cultural Holidays', href: '/#destinations' },
-  { tag: 'Destination', label: 'Cairo & Nile Tours', href: '/#destinations' },
+  { tag: 'Tour', label: 'Istanbul Historical & Bosphorus Tour', href: '/#travel' },
+  { tag: 'Tour', label: 'Cairo Heritage & Nile Cruise', href: '/#travel' },
+  { tag: 'Tour', label: 'Dubai Corporate Circuit', href: '/#travel' },
+  { tag: 'Tour', label: 'Bangkok & Pattaya Retreat', href: '/#travel' },
+  { tag: 'Tour', label: 'Bali Island Paradise Getaway', href: '/#travel' },
+  { tag: 'Tour', label: 'Kuala Lumpur & Genting Explorer', href: '/#travel' },
   { tag: 'Digital', label: 'Website Design & UI/UX', href: '/#digital' },
   { tag: 'Digital', label: 'Full-Stack Web Development', href: '/#digital' },
   { tag: 'Digital', label: 'SEO & Google Ads Marketing', href: '/#digital' },
@@ -31,7 +30,7 @@ const SEARCH_ITEMS = [
   { tag: 'Job', label: 'HVAC Technician (Jeddah Project)', href: '/#manpower' },
   { tag: 'Job', label: 'Executive Driver (Riyadh)', href: '/#manpower' },
   { tag: 'News', label: 'Understanding Workforce Mobilization Timelines', href: '/#news' },
-  { tag: 'News', label: 'Planning Peak Season Umrah Packages', href: '/#news' },
+  { tag: 'News', label: 'New MISA Investor License Pathways', href: '/#news' },
   { tag: 'Support', label: 'Worker Status & Visa Verification Tracker', href: '/worker-status' },
 ];
 
@@ -40,7 +39,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [activeCategory, setActiveCategory] = useState('All');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const categories = ['All', 'Service', 'Destination', 'Digital', 'Job', 'News', 'Support'];
+  const categories = ['All', 'Service', 'Tour', 'Digital', 'Job', 'News', 'Support'];
 
   useEffect(() => {
     if (isOpen) {

@@ -16,7 +16,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'All Services Directory | FAIZA AL MARWA COMPANY LTD',
   description:
-    'Comprehensive corporate business setup, visa processing, worldwide travel, Umrah pilgrimage, certified manpower recruitment, and digital agency solutions in Saudi Arabia.',
+    'Comprehensive MISA investor licensing & business setup, certified manpower recruitment, visa processing, international tour packages, and digital agency solutions in Saudi Arabia.',
 };
 
 const ICON_MAP: Record<string, any> = {
@@ -44,7 +44,7 @@ export default function ServicesHubPage() {
             Our Services &amp; Specialized Verticals
           </h1>
           <p className="text-paper/75 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            From establishing a 100% foreign-owned entity to booking Umrah pilgrimage and recruiting certified workforce — we manage every process with complete compliance.
+            From securing a 100% foreign-owned MISA investor license to recruiting certified workforce and planning international tours — we manage every process with complete compliance.
           </p>
         </div>
       </section>

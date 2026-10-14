@@ -12,18 +12,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'FAIZA AL MARWA COMPANY LTD — Travel, Business, Visa, Manpower & Digital Services',
-  description: 'Integrated travel & Umrah packages, Saudi business setup, corporate visa handling, certified manpower recruitment, and full-service digital agency solutions.',
+  title: 'FAIZA AL MARWA COMPANY LTD — Investor License, Manpower, Travel & Digital Services',
+  description: 'MISA investor license & Saudi business setup, certified manpower recruitment, international tour packages, corporate visa handling, and digital agency solutions.',
   keywords: [
-    'Saudi Business Setup',
+    'Investor License Saudi Arabia',
     'MISA License',
     'Iqama Renewal Saudi Arabia',
-    'Umrah Packages Riyadh',
+    'International Tour Packages',
     'Manpower Recruitment Saudi Arabia',
     'Digital Marketing Agency Riyadh',
     'Faiza Al Marwa',
   ],
   authors: [{ name: 'FAIZA AL MARWA COMPANY LTD' }],
+  icons: {
+    icon: '/images/logo.jpeg',
+    shortcut: '/images/logo.jpeg',
+  },
 };
 
 export default function RootLayout({

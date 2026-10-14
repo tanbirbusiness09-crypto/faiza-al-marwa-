@@ -139,11 +139,11 @@ export default function ContactPage() {
               </h4>
               <div className="space-y-2 text-xs text-paper/85">
                 <div className="flex justify-between py-1 border-b border-teal-mid">
-                  <span>Business Setup &amp; MISA Desk</span>
+                  <span>Investor License &amp; Business Setup Desk</span>
                   <span className="font-mono text-gold">+966 11 000 0001</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-teal-mid">
-                  <span>Flight Ticketing &amp; Umrah Desk</span>
+                  <span>Tour Packages &amp; Travel Desk</span>
                   <span className="font-mono text-gold">+966 11 000 0002</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-teal-mid">
@@ -241,10 +241,9 @@ export default function ContactPage() {
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                           className="w-full px-3 py-2 rounded-md border border-paper-line bg-paper text-xs text-ink focus:outline-none focus:border-gold"
                         >
-                          <option value="business">Business Setup &amp; MISA</option>
+                          <option value="business">Investor License &amp; Business Setup</option>
                           <option value="visa">Visa &amp; Iqama Immigration</option>
-                          <option value="travel">Travel, Flights &amp; Hotels</option>
-                          <option value="umrah">Umrah Pilgrimage Packages</option>
+                          <option value="travel">International Tour Packages</option>
                           <option value="manpower">Corporate Manpower Supply</option>
                           <option value="digital">Digital Agency &amp; Web Development</option>
                         </select>

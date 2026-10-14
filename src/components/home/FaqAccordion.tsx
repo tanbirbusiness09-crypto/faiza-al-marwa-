@@ -56,7 +56,7 @@ export default function FaqAccordion() {
             <p className="text-xs sm:text-sm text-softText max-w-xl">
               {t(
                 'faq_subtitle',
-                'Everything you need to know about our business setup, visa processing, Umrah travel, manpower recruitment, and digital services.'
+                'Everything you need to know about our investor licensing, manpower recruitment, visa processing, international tours, and digital services.'
               )}
             </p>
           </div>

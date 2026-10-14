@@ -7,16 +7,16 @@ import { Plane, MapPin, FileCheck2, Building2, Users2, MonitorSmartphone, ArrowR
 
 const QUICK_ACCESS_ITEMS = [
   {
-    icon: Plane,
-    title: 'Book a Flight',
-    desc: 'Instant flight searches, route comparisons, and flexible reservation support.',
-    href: '#booking',
+    icon: Building2,
+    title: 'Investor License',
+    desc: 'MISA license, company formation, CR licensing, and local corporate PRO.',
+    href: '#featured-services',
   },
   {
-    icon: MapPin,
-    title: 'Find a Destination',
-    desc: 'Explore holy cities, corporate metropolises, and luxury holiday getaways.',
-    href: '#destinations',
+    icon: Users2,
+    title: 'Manpower Supply',
+    desc: 'Request pre-screened technical, civil, and hospitality personnel on demand.',
+    href: '#manpower',
   },
   {
     icon: FileCheck2,
@@ -25,16 +25,16 @@ const QUICK_ACCESS_ITEMS = [
     href: '#featured-services',
   },
   {
-    icon: Building2,
-    title: 'Business Services',
-    desc: 'Company formation, CR licensing, MISA setup, and local corporate PRO.',
-    href: '#featured-services',
+    icon: Plane,
+    title: 'Tour Packages',
+    desc: 'International tour packages with hotels, transfers, and guided itineraries.',
+    href: '#travel',
   },
   {
-    icon: Users2,
-    title: 'Manpower Supply',
-    desc: 'Request pre-screened technical, civil, and hospitality personnel on demand.',
-    href: '#manpower',
+    icon: MapPin,
+    title: 'Custom Itineraries',
+    desc: 'Tailored group & family tours planned end-to-end by our travel desk.',
+    href: '#booking',
   },
   {
     icon: MonitorSmartphone,

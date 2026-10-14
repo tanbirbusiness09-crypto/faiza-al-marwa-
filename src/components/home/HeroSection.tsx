@@ -100,7 +100,7 @@ export default function HeroSection() {
           >
             {t(
               'hero_lead',
-              'FAIZA AL MARWA brings travel, business setup, visa, manpower and digital services together under one roof — so every request, from a single flight to a full corporate workforce, starts in the same place.'
+              'FAIZA AL MARWA delivers MISA investor licensing, certified manpower recruitment, international tour packages, visa processing and digital services under one roof — so every business and travel request starts in the same place.'
             )}
           </motion.p>
 
@@ -129,9 +129,9 @@ export default function HeroSection() {
 
           {/* Quick Access Pills with matching icons */}
           <motion.div variants={staggerItem} className="flex flex-wrap items-center gap-5 pt-4 text-xs font-semibold text-ink">
-            <Link href="#destinations" className="flex items-center gap-2 hover:text-gold transition-colors group">
-              <span className="text-gold text-sm group-hover:scale-110 transition-transform">📍</span>
-              <span>{t('cta_find_destination', 'Find a Destination')}</span>
+            <Link href="#featured-services" className="flex items-center gap-2 hover:text-gold transition-colors group">
+              <span className="text-gold text-sm group-hover:scale-110 transition-transform">🏛️</span>
+              <span>{t('cta_investor_license', 'Investor License')}</span>
             </Link>
             <Link href="#manpower" className="flex items-center gap-2 hover:text-gold transition-colors group">
               <span className="text-gold text-sm group-hover:scale-110 transition-transform">👥</span>
@@ -231,33 +231,33 @@ export default function HeroSection() {
                 <div className="flex justify-between items-start text-xs">
                   <div>
                     <span className="text-[9.5px] uppercase font-semibold text-text-soft block mb-0.5">
-                      PASSENGER / CLIENT
+                      CLIENT TYPE
                     </span>
-                    <strong className="font-display font-bold text-sm text-ink block">Any Traveler</strong>
+                    <strong className="font-display font-bold text-sm text-ink block">Foreign Investor</strong>
                   </div>
                   <div className="text-right">
                     <span className="text-[9.5px] uppercase font-semibold text-text-soft block mb-0.5">
                       SERVICE LINE
                     </span>
-                    <strong className="font-display font-bold text-sm text-teal-deep block">Umrah Premium</strong>
+                    <strong className="font-display font-bold text-sm text-teal-deep block">Investor License</strong>
                   </div>
                 </div>
 
                 {/* Route Strip */}
                 <div className="flex items-center justify-between py-2 border-y border-dashed border-paper-line">
                   <div>
-                    <span className="text-[9px] uppercase text-text-soft block">ORIGIN</span>
-                    <strong className="font-display font-extrabold text-base text-ink">RUH</strong>
+                    <span className="text-[9px] uppercase text-text-soft block">LICENSE</span>
+                    <strong className="font-display font-extrabold text-base text-ink">MISA</strong>
                   </div>
                   <div className="text-center">
                     <span className="text-[10px] font-bold text-gold flex items-center justify-center gap-1">
-                      ✈ DIRECT
+                      ⚡ FAST-TRACK
                     </span>
-                    <span className="text-[9px] text-text-soft block">Flight + Haramain</span>
+                    <span className="text-[9px] text-text-soft block">100% Foreign Ownership</span>
                   </div>
                   <div className="text-right">
-                    <span className="text-[9px] uppercase text-text-soft block">DESTINATION</span>
-                    <strong className="font-display font-extrabold text-base text-ink">MED</strong>
+                    <span className="text-[9px] uppercase text-text-soft block">OUTCOME</span>
+                    <strong className="font-display font-extrabold text-base text-ink">CR Issued</strong>
                   </div>
                 </div>
 

@@ -126,10 +126,10 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-3.5 py-2.5 bg-paper border border-paper-line rounded-lg text-xs sm:text-sm text-ink outline-none focus:border-teal-deep"
                     >
-                      <option value="Business Setup">100% Foreign Business Setup (MISA)</option>
+                      <option value="Business Setup">Investor License & Business Setup (MISA)</option>
                       <option value="Visa Services">Work & Employment Visa Stamping</option>
                       <option value="Manpower Supply">Corporate Manpower & Staffing</option>
-                      <option value="Travel & Umrah">Corporate Travel & VIP Umrah</option>
+                      <option value="Travel & Tours">Corporate Travel & Tour Packages</option>
                       <option value="Digital Services">Custom Web & Tech Solutions</option>
                       <option value="Other">Other Custom Inquiries</option>
                     </select>

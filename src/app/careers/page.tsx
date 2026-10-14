@@ -97,7 +97,7 @@ const JOBS_DATA: JobPosting[] = [
       'Food hygiene and safety certification',
       'High stamina in fast-paced catering environments',
     ],
-    description: 'Preparing high-volume buffet meals and à la carte dishes for 4-star and 5-star hotel guests during Umrah season.',
+    description: 'Preparing high-volume buffet meals and à la carte dishes for 4-star and 5-star hotel guests during peak tourism season.',
   },
   {
     id: 'fam-job-05',

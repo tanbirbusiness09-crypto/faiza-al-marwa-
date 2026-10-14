@@ -79,7 +79,7 @@ interface AuditEvent {
 const INITIAL_AUDIT_EVENTS: AuditEvent[] = [
   { id: 'ev-1', time: '10 mins ago', user: 'Admin (Riyadh)', action: 'Worker Milestone Advanced', detail: 'Mohammed Faruk (FAM-MOB-84920) updated to Stage 4 (Flight Ticket Issued)', type: 'worker' },
   { id: 'ev-2', time: '25 mins ago', user: 'System CRM', action: 'New Lead Submission', detail: 'Tariq Al-Mansoor submitted 100% Foreign LLC Setup inquiry', type: 'lead' },
-  { id: 'ev-3', time: '1 hour ago', user: 'Admin (Riyadh)', action: 'Package Price Updated', detail: 'Riyadh to Madinah Umrah Express updated to SAR 1,450', type: 'update' },
+  { id: 'ev-3', time: '1 hour ago', user: 'Admin (Riyadh)', action: 'Package Price Updated', detail: 'Istanbul & Bosphorus Explorer updated to SAR 4,100', type: 'update' },
   { id: 'ev-4', time: '3 hours ago', user: 'System Portal', action: 'Job Application Received', detail: 'Kamrul Hassan applied for Industrial Electrician role', type: 'lead' },
   { id: 'ev-5', time: 'Yesterday', user: 'Admin (Riyadh)', action: 'Site Settings Saved', detail: 'Updated Riyadh HQ direct desk phone lines & WhatsApp hotline', type: 'system' },
 ];
@@ -384,7 +384,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                 autoFocus
                 value={paletteQuery}
                 onChange={(e) => setPaletteQuery(e.target.value)}
-                placeholder="Jump to any module or execute command (e.g. Umrah, Jobs, CRM, Hero, Backup)..."
+                placeholder="Jump to any module or execute command (e.g. Tours, Jobs, CRM, Hero, Backup)..."
                 className="w-full bg-transparent text-sm text-white focus:outline-none placeholder:text-paper/40"
               />
               <span className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] font-mono text-paper/60">ESC</span>
@@ -396,7 +396,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                 { label: '🎛️ Kanban Leads Pipeline & CRM', tab: 'kanban', desc: 'Visual stages and WhatsApp generator' },
                 { label: '🏠 Edit Hero Headline & Contact Numbers', tab: 'site_setup', desc: 'Update numbers, WhatsApp and copy' },
                 { label: '🏢 Manage Services & Deliverables', tab: 'services', desc: 'Add or edit 6+ service verticals' },
-                { label: '✈️ Manage Travel & Umrah Packages', tab: 'travel_packages', desc: 'Edit flight routes, prices, and tickets' },
+                { label: '✈️ Manage International Tour Packages', tab: 'travel_packages', desc: 'Edit tour routes, prices, and itineraries' },
                 { label: '🌍 Destinations & City Skylines', tab: 'destinations', desc: 'Manage destination cards and tours' },
                 { label: '💼 Job Openings & Candidate CVs', tab: 'jobs', desc: 'Recruitment portal and applicant status' },
                 { label: '🔍 Worker Visa Mobilization Stepper', tab: 'workers', desc: 'Track passport milestones 1 to 5' },
@@ -479,7 +479,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                 {[
                   { id: 'site_setup', label: 'Hero & Contacts', icon: Sliders },
                   { id: 'services', label: 'Services & Deliverables', icon: Layers },
-                  { id: 'travel_packages', label: 'Travel & Umrah Tickets', icon: Plane },
+                  { id: 'travel_packages', label: 'Tour Packages', icon: Plane },
                   { id: 'destinations', label: 'Destinations Hub', icon: MapPin },
                 ].map((item) => {
                   const Icon = item.icon;
@@ -685,10 +685,10 @@ export default function UltraPremiumEnterpriseAdmin() {
                       setActiveTab('travel_packages');
                       setEditingTravel({
                         id: `tp-${Date.now()}`,
-                        cat: 'Umrah',
-                        title: 'New Umrah Package',
+                        cat: 'Holiday',
+                        title: 'New Tour Package',
                         from: 'RUH',
-                        to: 'MED',
+                        to: 'IST',
                         duration: '5 Days / 4 Nights',
                         price: '1,500',
                         badge: 'Featured',
@@ -696,7 +696,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                     }}
                     className="px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/20 transition-all"
                   >
-                    + Add Travel / Umrah Package
+                    + Add Tour Package
                   </button>
                   <button
                     onClick={() => {
@@ -1150,18 +1150,18 @@ export default function UltraPremiumEnterpriseAdmin() {
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-gold font-display font-semibold uppercase tracking-wider text-xs block mb-1">
-                    Flight &amp; Umrah Inventory
+                    International Tour Inventory
                   </span>
-                  <h2 className="text-2xl font-display font-bold text-white">Travel Packages &amp; Tickets</h2>
+                  <h2 className="text-2xl font-display font-bold text-white">Tour Packages</h2>
                 </div>
                 <button
                   onClick={() =>
                     setEditingTravel({
                       id: `tp-${Date.now()}`,
-                      cat: 'Umrah',
-                      title: 'New Travel Package',
+                      cat: 'Holiday',
+                      title: 'New Tour Package',
                       from: 'RUH',
-                      to: 'MED',
+                      to: 'IST',
                       duration: '5 Days / 4 Nights',
                       price: '1,650',
                       badge: 'Featured',
@@ -1170,7 +1170,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gold text-ink text-xs font-bold shadow"
                 >
                   <Plus className="w-4 h-4" />
-                  <span>Add Package / Ticket</span>
+                  <span>Add Tour Package</span>
                 </button>
               </div>
 
@@ -1803,7 +1803,7 @@ export default function UltraPremiumEnterpriseAdmin() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
           <div className="bg-[#122E28] w-full max-w-lg rounded-2xl border border-gold/40 shadow-2xl p-6 relative space-y-4 animate-scale-up">
             <div className="flex items-center justify-between border-b border-paper/10 pb-3">
-              <h3 className="font-display font-bold text-white text-lg">Edit Travel / Umrah Package</h3>
+              <h3 className="font-display font-bold text-white text-lg">Edit Tour Package</h3>
               <button onClick={() => setEditingTravel(null)} className="p-1 text-paper/60 hover:text-white">
                 <X className="w-5 h-5" />
               </button>
@@ -1822,7 +1822,7 @@ export default function UltraPremiumEnterpriseAdmin() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-semibold text-paper/80 mb-1">Category (Umrah / Holiday)</label>
+                  <label className="block font-semibold text-paper/80 mb-1">Category (Holiday / Cultural)</label>
                   <input
                     type="text"
                     value={editingTravel.cat}

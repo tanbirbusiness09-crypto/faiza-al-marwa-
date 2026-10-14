@@ -16,17 +16,6 @@ export interface ServiceItem {
   href: string;
 }
 
-export interface DestinationItem {
-  id: string;
-  name: string;
-  country: string;
-  tag: string;
-  description: string;
-  gradient: string;
-  skylineKey: string;
-  popularFor: string;
-}
-
 export interface TravelPackage {
   id: string;
   category: string;

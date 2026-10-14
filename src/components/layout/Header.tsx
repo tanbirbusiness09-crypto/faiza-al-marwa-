@@ -99,8 +99,8 @@ export default function Header() {
       tag: 'Fast-Track',
     },
     {
-      title: t('serv_cat_travel_title', 'Travel & Umrah Packages'),
-      desc: t('serv_cat_travel_desc', 'VIP pilgrimage, group itineraries & luxury hotel bookings.'),
+      title: t('serv_cat_travel_title', 'International Tour Packages'),
+      desc: t('serv_cat_travel_desc', 'Curated itineraries, luxury hotels & group tours worldwide.'),
       href: '/#travel',
       icon: faPlaneDeparture,
       tag: 'Custom Tours',
@@ -124,21 +124,21 @@ export default function Header() {
   // Structured Travel Sub-Categories
   const travelSubcategories = [
     {
-      title: t('travel_cat_dest_title', 'Explore Saudi Destinations'),
-      desc: t('travel_cat_dest_desc', 'Riyadh, Jeddah, AlUla, Dammam, Makkah & Madinah.'),
-      href: '/#destinations',
+      title: t('travel_cat_dest_title', 'International Tour Packages'),
+      desc: t('travel_cat_dest_desc', 'Istanbul, Cairo, Dubai, Bangkok, Bali & more.'),
+      href: '/#travel',
       icon: faLocationDot,
     },
     {
-      title: t('travel_cat_booking_title', 'Instant Booking Hub'),
-      desc: t('travel_cat_booking_desc', 'Reserve flights, VIP transportation and 5-star stays.'),
+      title: t('travel_cat_booking_title', 'Instant Tour Booking'),
+      desc: t('travel_cat_booking_desc', 'Request package quotes, itineraries & hotel stays.'),
       href: '/#booking',
       icon: faCalendarCheck,
     },
     {
-      title: t('travel_cat_umrah_title', 'Umrah & Religious Travel'),
-      desc: t('travel_cat_umrah_desc', 'Comprehensive packages with ground support & guidance.'),
-      href: '/#travel',
+      title: t('travel_cat_custom_title', 'Custom Tour Itineraries'),
+      desc: t('travel_cat_custom_desc', 'Tailored group & family tours with full support.'),
+      href: '/#booking',
       icon: faPlaneDeparture,
     },
   ];

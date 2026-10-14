@@ -14,15 +14,6 @@ interface FinderServiceItem {
 }
 
 const TAB_DATA: Record<string, { label: string; items: FinderServiceItem[] }> = {
-  travel: {
-    label: 'Travel',
-    items: [
-      { icon: '✈️', title: 'Flight Booking', sub: 'Domestic & International', href: '#booking' },
-      { icon: '🏢', title: 'Hotel Reservations', sub: 'Stay with Comfort', href: '#booking' },
-      { icon: '🗺️', title: 'Custom Tour Packages', sub: 'Tailored for You', href: '#travel' },
-      { icon: '🕋', title: 'Umrah & Ziyarah', sub: 'Spiritual Journey', href: '#travel' },
-    ],
-  },
   business: {
     label: 'Business',
     items: [
@@ -30,6 +21,15 @@ const TAB_DATA: Record<string, { label: string; items: FinderServiceItem[] }> = 
       { icon: '📜', title: 'Commercial Registration', sub: 'CR & Ministry Filing', href: '#featured-services' },
       { icon: '📑', title: 'ZATCA & Tax Filing', sub: 'VAT & GOSI Compliance', href: '#featured-services' },
       { icon: '🏦', title: 'Corporate Bank Opening', sub: 'Saudi Banking Support', href: '#featured-services' },
+    ],
+  },
+  manpower: {
+    label: 'Manpower',
+    items: [
+      { icon: '👷', title: 'Industrial & Electrical Trades', sub: 'Pre-screened & Tested', href: '#manpower' },
+      { icon: '❄️', title: 'HVAC & Mechanical Teams', sub: 'Certified Technicians', href: '#manpower' },
+      { icon: '🏨', title: 'Hospitality & Facility Staff', sub: 'Hotels & Catering', href: '#manpower' },
+      { icon: '📋', title: 'Browse Active Job Vacancies', sub: 'Direct Saudi Contracts', href: '#manpower' },
     ],
   },
   visa: {
@@ -41,13 +41,13 @@ const TAB_DATA: Record<string, { label: string; items: FinderServiceItem[] }> = 
       { icon: '👨‍👩‍👧', title: 'Family & Visit Visas', sub: 'Tourist & Dependent', href: '#featured-services' },
     ],
   },
-  manpower: {
-    label: 'Manpower',
+  travel: {
+    label: 'Tours',
     items: [
-      { icon: '👷', title: 'Industrial & Electrical Trades', sub: 'Pre-screened & Tested', href: '#manpower' },
-      { icon: '❄️', title: 'HVAC & Mechanical Teams', sub: 'Certified Technicians', href: '#manpower' },
-      { icon: '🏨', title: 'Hospitality & Facility Staff', sub: 'Hotels & Catering', href: '#manpower' },
-      { icon: '📋', title: 'Browse Active Job Vacancies', sub: 'Direct Saudi Contracts', href: '#manpower' },
+      { icon: '🗺️', title: 'International Tour Packages', sub: 'Istanbul · Cairo · Dubai', href: '#travel' },
+      { icon: '🇹🇭', title: 'Bangkok & Pattaya Retreat', sub: '5-Day Holiday Package', href: '#travel' },
+      { icon: '🇮🇩', title: 'Bali Paradise Getaway', sub: '7-Day Island Escape', href: '#travel' },
+      { icon: '📅', title: 'Custom Tour Itineraries', sub: 'Tailored for You', href: '#booking' },
     ],
   },
   digital: {
@@ -61,10 +61,10 @@ const TAB_DATA: Record<string, { label: string; items: FinderServiceItem[] }> = 
   },
 };
 
-const TAB_KEYS = ['travel', 'business', 'visa', 'manpower', 'digital'];
+const TAB_KEYS = ['business', 'manpower', 'visa', 'travel', 'digital'];
 
 export default function ServiceFinder() {
-  const [activeKey, setActiveKey] = useState('travel');
+  const [activeKey, setActiveKey] = useState('business');
 
   const currentIndex = TAB_KEYS.indexOf(activeKey);
 
@@ -73,7 +73,7 @@ export default function ServiceFinder() {
     setActiveKey(TAB_KEYS[nextIdx]);
   };
 
-  const currentTab = TAB_DATA[activeKey] || TAB_DATA.travel;
+  const currentTab = TAB_DATA[activeKey] || TAB_DATA.business;
 
   return (
     <section className="container-custom py-6" id="finder">

@@ -13,7 +13,7 @@ export interface ServiceDetailData extends ServiceItem {
 export const DETAILED_SERVICES: Record<string, ServiceDetailData> = {
   'business-setup': {
     id: 'business-setup',
-    title: 'Business Setup & Investment in Saudi Arabia',
+    title: 'Investor License & Business Setup in Saudi Arabia',
     category: 'business',
     categoryLabel: 'Business Formation',
     color: '#123A33',
@@ -106,36 +106,6 @@ export const DETAILED_SERVICES: Record<string, ServiceDetailData> = {
       { q: 'Do you offer emergency ticket rescheduling?', a: 'Our travel desk operates 24/7 via WhatsApp to handle urgent flight modifications.' },
     ],
     ctaText: 'Book Your Flights & Hotels',
-  },
-  'umrah': {
-    id: 'umrah',
-    title: 'Umrah & Religious Ziyarah Packages',
-    category: 'travel',
-    categoryLabel: 'Umrah & Religious Tours',
-    color: '#2A6357',
-    iconName: 'Compass',
-    description: 'Customized Umrah packages from Riyadh, Jeddah, and worldwide with luxury Haram-view hotels, Haramain train, and Nusuk support.',
-    href: '/services/umrah',
-    heroTag: 'Sacred Pilgrimage with Peace of Mind',
-    heroHeadline: 'Premium & Group Umrah Packages from Riyadh and Worldwide',
-    overview: 'Performing Umrah is a profoundly sacred journey. FAIZA AL MARWA takes care of every logistic detail — from Nusuk platform permit bookings and Haramain High-Speed Train tickets to luxury 5-star accommodations overlooking the Kaaba and Al-Masjid an-Nabawi.',
-    deliverables: [
-      { title: 'Group & VIP Private Umrah Packages', desc: 'Tailored itineraries for solo travelers, families, and organized community groups.', iconName: 'Sparkles' },
-      { title: 'Haram-Facing Luxury Hotels', desc: 'Premium accommodations in Makkah (Clock Tower, Jabal Omar) and Madinah Central Zone.', iconName: 'Building' },
-      { title: 'Haramain High-Speed Train & VIP Transfers', desc: 'First-class high-speed train tickets connecting Makkah, Jeddah Airport, and Madinah.', iconName: 'Train' },
-      { title: 'Guided Historical Ziyarah Tours', desc: 'Visits to Cave of Hira, Mount Uhud, Masjid Quba, and prominent Islamic heritage landmarks.', iconName: 'MapPin' },
-      { title: 'Nusuk Platform Assistance', desc: 'Help with Rawdah Al-Sharifah praying appointments and Umrah permit scheduling.', iconName: 'Smartphone' },
-    ],
-    steps: [
-      { step: '01', title: 'Choose Package Tier', desc: 'Select from 7-day group packages or customized 5-star VIP itineraries.' },
-      { step: '02', title: 'Select Dates & Transport', desc: 'Coordinate flight or high-speed rail connections from Riyadh or home country.' },
-      { step: '03', title: 'Receive Full Itinerary & Support', desc: 'Get hotel vouchers, permits, ground transfers, and 24/7 on-ground assistance.' },
-    ],
-    faqs: [
-      { q: 'What is included in the VIP Umrah package?', a: '5-star Haram-view hotels in Makkah & Madinah, private GMC transfers, Haramain train first-class tickets, and private Ziyarah tour.' },
-      { q: 'How far in advance should we book for Ramadan or peak seasons?', a: 'We recommend booking 4 to 8 weeks in advance to secure prime Haram-view rooms.' },
-    ],
-    ctaText: 'Reserve Your Umrah Package',
   },
   'manpower': {
     id: 'manpower',

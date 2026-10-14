@@ -19,7 +19,7 @@ export default function Footer() {
             <BrandLogo isFooter={true} />
 
             <p className="text-xs sm:text-sm text-paper-white/65 leading-relaxed max-w-sm">
-              {t('footer_about_body', 'Integrated travel, business formation, visa processing, manpower recruitment, and digital agency solutions for the Saudi market and beyond.')}
+              {t('footer_about_body', 'MISA investor licensing, manpower recruitment, visa processing, international tour packages, and digital agency solutions for the Saudi market and beyond.')}
             </p>
 
             <div className="pt-2 space-y-2 text-xs text-paper-white/70">
@@ -75,7 +75,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs sm:text-sm text-paper-white/75">
               <li>
                 <Link href="/#featured-services" className="hover:text-gold-light transition-colors">
-                  Business Setup & MISA
+                  Investor License & Business Setup
                 </Link>
               </li>
               <li>
@@ -95,7 +95,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#travel" className="hover:text-gold-light transition-colors">
-                  Umrah Packages
+                  International Tour Packages
                 </Link>
               </li>
             </ul>
@@ -115,12 +115,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#booking" className="hover:text-gold-light transition-colors">
-                  Flight & Hotel Booking
+                  Tour Package Booking
                 </Link>
               </li>
               <li>
-                <Link href="/#destinations" className="hover:text-gold-light transition-colors">
-                  Destinations Guide
+                <Link href="/#travel" className="hover:text-gold-light transition-colors">
+                  International Tours
                 </Link>
               </li>
               <li>
