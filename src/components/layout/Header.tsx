@@ -50,6 +50,10 @@ export default function Header() {
   const [consultOpen, setConsultOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Compact nav item: navy hover + growing gold underline
+  const NAV_ITEM =
+    "relative px-2.5 py-1.5 rounded-lg after:content-[''] after:absolute after:left-2.5 after:right-2.5 after:bottom-0.5 after:h-[2px] after:bg-gold after:rounded-full after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300";
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -176,11 +180,11 @@ export default function Header() {
         transition={{ duration: 0.35, ease: smoothEase }}
         className={`sticky top-0 z-40 transition-colors duration-300 border-b ${
           scrolled
-            ? 'bg-paper/95 backdrop-blur-md shadow-md border-paper-line py-2.5'
-            : 'bg-paper/90 backdrop-blur-sm border-paper-line/60 py-3'
+            ? 'bg-paper/95 backdrop-blur-md shadow-md border-paper-line py-1.5'
+            : 'bg-paper/90 backdrop-blur-sm border-paper-line/60 py-2'
         }`}
       >
-        <div className="container-custom flex items-center justify-between gap-4 h-12 sm:h-14">
+        <div className="container-custom flex items-center justify-between gap-4 h-10 sm:h-11">
           {/* Brand Logo with Royal Shield */}
           <BrandLogo />
 
@@ -189,9 +193,9 @@ export default function Header() {
             {/* 1. Home */}
             <Link
               href="/#home"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-ink/90 hover:text-teal-deep px-3 py-2 rounded-xl hover:bg-teal-deep/8 transition-all duration-200 whitespace-nowrap flex-shrink-0"
+              className={`${NAV_ITEM} group inline-flex items-center gap-2 text-[13px] font-semibold text-ink/90 hover:text-navy hover:bg-navy/8 transition-all duration-200 whitespace-nowrap flex-shrink-0`}
             >
-              <FontAwesomeIcon icon={faHouse} className="w-3.5 h-3.5 text-teal-deep" />
+              <FontAwesomeIcon icon={faHouse} className="w-3.5 h-3.5 text-teal-deep group-hover:text-navy" />
               <span className="whitespace-nowrap">{t('nav_home', 'Home')}</span>
             </Link>
 
@@ -203,16 +207,16 @@ export default function Header() {
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
-                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+                className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'services'
                     ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
+                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faLayerGroup}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'services' ? 'text-gold-light' : 'text-teal-deep'
+                    activeDropdown === 'services' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_services', 'Services')}</span>
@@ -308,16 +312,16 @@ export default function Header() {
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'travel' ? null : 'travel')}
-                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+                className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'travel'
                     ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
+                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faPlaneDeparture}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'travel' ? 'text-gold-light' : 'text-teal-deep'
+                    activeDropdown === 'travel' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_travel_dest', 'Travel & Tours')}</span>
@@ -373,16 +377,16 @@ export default function Header() {
             >
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
-                className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
+                className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'company'
                     ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
+                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faBuildingColumns}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'company' ? 'text-gold-light' : 'text-teal-deep'
+                    activeDropdown === 'company' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_company', 'Company')}</span>
@@ -438,7 +442,7 @@ export default function Header() {
               whileHover={{ scale: 1.06, y: -1 }}
               whileTap={{ scale: 0.94 }}
               onClick={() => setSearchOpen(true)}
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white hover:border-teal-deep hover:bg-teal-deep/5 text-teal-deep hover:text-gold shadow-2xs transition-colors flex-shrink-0"
+              className="w-8 h-8 rounded-lg flex items-center justify-center border border-paper-line bg-paper-white hover:border-navy hover:bg-navy hover:text-gold-light text-navy shadow-2xs transition-colors flex-shrink-0"
               aria-label="Search site"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} className="w-3.5 h-3.5" />
@@ -450,11 +454,11 @@ export default function Header() {
                 whileHover={{ scale: 1.03, y: -1 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setLangMenuOpen(!langMenuOpen)}
-                className="inline-flex items-center gap-1 px-2.5 py-1.5 sm:py-2 rounded-xl border border-paper-line hover:border-teal-deep bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors whitespace-nowrap flex-shrink-0"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-paper-line hover:border-navy hover:bg-navy/6 bg-paper-white text-xs font-bold text-ink shadow-2xs transition-colors whitespace-nowrap flex-shrink-0"
                 aria-label="Change language"
               >
-                <FontAwesomeIcon icon={faGlobe} className="w-3.5 h-3.5 text-teal-deep" />
-                <span className="font-mono text-[11px] font-bold text-teal-deep whitespace-nowrap">{language.toUpperCase()}</span>
+                <FontAwesomeIcon icon={faGlobe} className="w-3.5 h-3.5 text-navy" />
+                <span className="font-mono text-[11px] font-bold text-navy whitespace-nowrap">{language.toUpperCase()}</span>
                 <FontAwesomeIcon icon={faChevronDown} className="w-2.5 h-2.5 text-softText/70" />
               </motion.button>
 
@@ -497,9 +501,9 @@ export default function Header() {
             <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
               <button
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-navy hover:bg-navy-light text-white border border-navy-light font-bold text-xs shadow-md shadow-navy/25 hover:shadow-lg hover:shadow-navy/35 transition-all duration-200 whitespace-nowrap flex-shrink-0"
+                className="group inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-lg bg-navy hover:bg-gold hover:text-ink text-white border border-navy-light hover:border-gold font-bold text-xs shadow-md shadow-navy/25 hover:shadow-lg hover:shadow-gold/30 transition-all duration-200 whitespace-nowrap flex-shrink-0"
               >
-                <FontAwesomeIcon icon={faPhoneVolume} className="w-3.5 h-3.5 text-gold-light" />
+                <FontAwesomeIcon icon={faPhoneVolume} className="w-3.5 h-3.5 text-gold-light group-hover:text-ink" />
                 <span className="whitespace-nowrap">{t('nav_contact', 'Contact Us')}</span>
               </button>
             </motion.div>
@@ -507,7 +511,7 @@ export default function Header() {
             {/* Mobile Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border border-paper-line bg-paper-white text-ink hover:text-teal-deep hover:border-teal-deep transition-colors flex-shrink-0"
+              className="xl:hidden w-8 h-8 rounded-lg flex items-center justify-center border border-paper-line bg-paper-white text-ink hover:text-gold-light hover:bg-navy hover:border-navy transition-colors flex-shrink-0"
               aria-label="Toggle navigation menu"
             >
               <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} className="w-4 h-4" />
