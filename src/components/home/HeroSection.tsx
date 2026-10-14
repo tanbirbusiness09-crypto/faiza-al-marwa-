@@ -85,10 +85,10 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline (Typewriter Entrance) — hidden on mobile, sr-only keeps it for SEO */}
+          {/* Headline (Typewriter Entrance) — mobile-friendly size */}
           <motion.h1
             variants={staggerItem}
-            className="hidden sm:block text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px] sm:min-h-[2.4em]"
+            className="block text-[27px] leading-[1.18] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-[54px] text-ink font-display font-bold tracking-tight max-w-[580px] min-h-[2.4em]"
           >
             <TypeWriter
               parts={[
@@ -104,7 +104,7 @@ export default function HeroSection() {
           {/* Subtitle (3 Lines Clean Layout) */}
           <motion.p
             variants={staggerItem}
-            className="text-[14px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.65] max-w-[530px] line-clamp-3 sm:line-clamp-none"
+            className="text-[13.5px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.6] sm:leading-[1.65] max-w-[530px]"
           >
             {t(
               'hero_lead',

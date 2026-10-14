@@ -193,7 +193,7 @@ export default function Header() {
             {/* 1. Home */}
             <Link
               href="/#home"
-              className={`${NAV_ITEM} group inline-flex items-center gap-2 text-[13px] font-semibold text-ink/90 hover:text-navy hover:bg-navy/8 transition-all duration-200 whitespace-nowrap flex-shrink-0`}
+              className={`${NAV_ITEM} group inline-flex items-center gap-2 text-[13px] font-semibold text-ink/90 hover:text-navy transition-all duration-200 whitespace-nowrap flex-shrink-0`}
             >
               <FontAwesomeIcon icon={faHouse} className="w-3.5 h-3.5 text-teal-deep group-hover:text-navy" />
               <span className="whitespace-nowrap">{t('nav_home', 'Home')}</span>
@@ -209,21 +209,21 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
                 className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'services'
-                    ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
+                    ? 'text-navy after:scale-x-100'
+                    : 'text-ink/90 hover:text-navy'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faLayerGroup}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'services' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
+                    activeDropdown === 'services' ? 'text-navy' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_services', 'Services')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
-                    activeDropdown === 'services' ? 'rotate-180 text-gold-light' : 'text-softText/70'
+                    activeDropdown === 'services' ? 'rotate-180 text-navy' : 'text-softText/70'
                   }`}
                 />
               </button>
@@ -314,21 +314,21 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'travel' ? null : 'travel')}
                 className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'travel'
-                    ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
+                    ? 'text-navy after:scale-x-100'
+                    : 'text-ink/90 hover:text-navy'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faPlaneDeparture}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'travel' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
+                    activeDropdown === 'travel' ? 'text-navy' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_travel_dest', 'Travel & Tours')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
-                    activeDropdown === 'travel' ? 'rotate-180 text-gold-light' : 'text-softText/70'
+                    activeDropdown === 'travel' ? 'rotate-180 text-navy' : 'text-softText/70'
                   }`}
                 />
               </button>
@@ -379,21 +379,21 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
                 className={`${NAV_ITEM} group inline-flex items-center gap-1.5 text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'company'
-                    ? 'bg-navy text-white shadow-sm'
-                    : 'text-ink/90 hover:text-navy hover:bg-navy/8'
+                    ? 'text-navy after:scale-x-100'
+                    : 'text-ink/90 hover:text-navy'
                 }`}
               >
                 <FontAwesomeIcon
                   icon={faBuildingColumns}
                   className={`w-3.5 h-3.5 transition-colors ${
-                    activeDropdown === 'company' ? 'text-gold-light' : 'text-teal-deep group-hover:text-navy'
+                    activeDropdown === 'company' ? 'text-navy' : 'text-teal-deep group-hover:text-navy'
                   }`}
                 />
                 <span className="whitespace-nowrap">{t('nav_company', 'Company')}</span>
                 <FontAwesomeIcon
                   icon={faChevronDown}
                   className={`w-2.5 h-2.5 transition-transform duration-200 ${
-                    activeDropdown === 'company' ? 'rotate-180 text-gold-light' : 'text-softText/70'
+                    activeDropdown === 'company' ? 'rotate-180 text-navy' : 'text-softText/70'
                   }`}
                 />
               </button>

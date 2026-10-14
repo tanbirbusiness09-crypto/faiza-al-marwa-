@@ -123,13 +123,13 @@ export default function AppointmentBooking() {
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12">
           {/* ---------- Left: Pitch column ---------- */}
-          <div className="lg:col-span-4 p-6 sm:p-9 lg:p-10 flex flex-col">
+          <div className="lg:col-span-4 p-5 sm:p-9 lg:p-10 flex flex-col">
             <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-light mb-3 flex items-center gap-2">
               <span className="w-5 h-0.5 bg-gold-light" />
               <span>{t('booking_eyebrow', 'Free consultation')}</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-display font-bold text-white leading-[1.15]">
+            <h2 className="text-xl sm:text-3xl lg:text-[34px] font-display font-bold text-white leading-[1.18] sm:leading-[1.15]">
               {t('booking_title', 'Book an Appointment')}
             </h2>
 
@@ -140,17 +140,17 @@ export default function AppointmentBooking() {
               )}
             </p>
 
-            <ul className="mt-7 space-y-4">
+            <ul className="mt-5 sm:mt-7 space-y-3.5 sm:space-y-4">
               {ASSURANCES.map((item) => (
                 <li key={item.title} className="flex items-start gap-3">
-                  <span className="w-9 h-9 shrink-0 rounded-lg bg-white/10 border border-white/12 flex items-center justify-center">
+                  <span className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 rounded-lg bg-white/10 border border-white/12 flex items-center justify-center">
                     <item.icon className="w-[18px] h-[18px] text-gold-light" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[13px] font-bold text-white leading-snug">
+                    <span className="block text-[12.5px] sm:text-[13px] font-bold text-white leading-snug">
                       {item.title}
                     </span>
-                    <span className="block text-[11.5px] leading-relaxed text-white/60 mt-0.5">
+                    <span className="block text-[11px] sm:text-[11.5px] leading-relaxed text-white/60 mt-0.5">
                       {item.desc}
                     </span>
                   </span>
@@ -158,7 +158,7 @@ export default function AppointmentBooking() {
               ))}
             </ul>
 
-            <div className="mt-auto pt-8">
+            <div className="mt-auto pt-5 sm:pt-8">
               <span className="block text-[11px] uppercase tracking-wider text-white/50 mb-2">
                 Prefer to talk?
               </span>
@@ -184,8 +184,8 @@ export default function AppointmentBooking() {
           </div>
 
           {/* ---------- Right: Appointment form card ---------- */}
-          <div className="lg:col-span-8 lg:p-4 lg:pl-0">
-            <div className="bg-paper-white rounded-none lg:rounded-2xl p-6 sm:p-8 text-ink shadow-2xl border-t lg:border-t-0 border-paper-line h-full">
+          <div className="lg:col-span-8 p-3 sm:p-4 lg:p-4 lg:pl-0">
+            <div className="bg-paper-white rounded-2xl p-5 sm:p-8 text-ink shadow-2xl border border-paper-line h-full">
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div
@@ -222,7 +222,7 @@ export default function AppointmentBooking() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.25, ease: smoothEase }}
                     onSubmit={handleSubmit}
-                    className="space-y-6"
+                    className="space-y-5 sm:space-y-6"
                   >
                     {/* Step 1 — Appointment details */}
                     <fieldset className="space-y-4">
