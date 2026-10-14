@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { DETAILED_SERVICES } from '@/lib/servicesData';
+import { NEWS_DATA } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://faizaalmarwa.com';
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  }));
+
+  const newsUrls = NEWS_DATA.map((item) => ({
+    url: `${baseUrl}/news/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
   }));
 
   return [
@@ -42,6 +50,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/news`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
     ...serviceUrls,
+    ...newsUrls,
   ];
 }

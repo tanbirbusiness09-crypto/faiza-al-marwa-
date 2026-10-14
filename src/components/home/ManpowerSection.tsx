@@ -58,7 +58,7 @@ export default function ManpowerSection() {
             <motion.div {...hoverButton}>
               <Link
                 href="#booking"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-teal-deep hover:bg-teal-mid text-white font-bold text-xs sm:text-sm rounded-lg shadow-sm block"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-navy hover:bg-navy-light text-white font-bold text-xs sm:text-sm rounded-lg shadow-sm block"
               >
                 <span>{t('cta_request_manpower', 'Request Manpower')}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function ManpowerSection() {
             <motion.div {...hoverButton}>
               <Link
                 href="#booking"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-teal-deep text-teal-deep hover:bg-teal-deep hover:text-white font-bold text-xs sm:text-sm rounded-lg transition-colors block"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy text-navy hover:bg-navy hover:text-white font-bold text-xs sm:text-sm rounded-lg transition-colors block"
               >
                 <span>{t('cta_find_jobs', 'Find Jobs & Apply')}</span>
                 <ArrowRight className="w-4 h-4" />

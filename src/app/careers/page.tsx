@@ -287,7 +287,7 @@ export default function CareersPage() {
                   setActiveJob(job);
                   setSubmittedId(null);
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-md bg-teal-deep hover:bg-teal-mid text-paper font-semibold text-xs transition-all shadow active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-md bg-navy hover:bg-navy-light text-white font-semibold text-xs transition-all shadow active:scale-95"
               >
                 <span>Apply for this Job</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -327,7 +327,7 @@ export default function CareersPage() {
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href={`/worker-status?code=${submittedId}`}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-xs transition-all shadow"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-navy hover:bg-navy-light text-white font-semibold text-xs transition-all shadow"
                   >
                     <span>Check Live Status</span>
                     <ArrowRight className="w-4 h-4" />
@@ -431,7 +431,7 @@ export default function CareersPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 px-4 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-xs transition-all shadow-md active:scale-95"
+                    className="w-full py-3 px-4 rounded-md bg-navy hover:bg-navy-light text-white font-semibold text-xs transition-all shadow-md active:scale-95"
                   >
                     Submit Application &amp; Generate Tracking Code
                   </button>

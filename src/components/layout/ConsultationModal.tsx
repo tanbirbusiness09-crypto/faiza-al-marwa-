@@ -110,7 +110,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       setSubmitted(false);
                       onClose();
                     }}
-                    className="px-6 py-2.5 bg-gold hover:bg-gold-light text-ink font-semibold rounded-lg transition-colors"
+                    className="px-6 py-2.5 bg-navy hover:bg-navy-light text-white font-semibold rounded-lg transition-colors"
                   >
                     Close Window
                   </button>
@@ -225,7 +225,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     {...hoverButton}
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3 bg-teal-deep hover:bg-teal-mid text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full py-3 bg-navy hover:bg-navy-light text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm"
                   >
                     <Send className="w-4 h-4 text-gold-light" />
                     <span>{loading ? 'Submitting...' : 'Submit Request'}</span>

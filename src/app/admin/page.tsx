@@ -676,7 +676,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                         deliverables: [{ title: 'Feature 1', desc: 'Deliverable details' }],
                       });
                     }}
-                    className="px-3.5 py-2 rounded-lg bg-gold hover:bg-gold-light text-ink text-xs font-bold shadow-md transition-all active:scale-95"
+                    className="px-3.5 py-2 rounded-lg bg-navy-light hover:bg-[#2E66C0] text-white text-xs font-bold shadow-md transition-all active:scale-95"
                   >
                     + Add New Service
                   </button>
@@ -907,7 +907,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                 </div>
                 <button
                   onClick={() => saveAllChanges(cmsData, 'Updated Hero Headline & Contact Numbers')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gold hover:bg-gold-light text-ink text-xs font-bold shadow-md"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-navy-light hover:bg-[#2E66C0] text-white text-xs font-bold shadow-md"
                 >
                   <Save className="w-4 h-4" />
                   <span>Save Changes</span>
@@ -1204,7 +1204,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                     <div className="flex items-center gap-2 pt-2">
                       <button
                         onClick={() => setEditingTravel({ ...pkg })}
-                        className="flex-1 py-1.5 rounded-lg bg-teal-deep text-white text-xs font-semibold hover:bg-teal-mid border border-gold/30"
+                        className="flex-1 py-1.5 rounded-lg bg-navy text-white text-xs font-semibold hover:bg-navy-light border border-gold/30"
                       >
                         Edit
                       </button>
@@ -1372,7 +1372,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                     link.remove();
                     showToast('Audit Log exported to CSV!');
                   }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-deep text-white text-xs font-semibold border border-gold/30 shadow"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-navy text-white text-xs font-semibold border border-gold/30 shadow"
                 >
                   <Download className="w-3.5 h-3.5 text-gold" />
                   <span>Export Audit CSV</span>
@@ -1419,7 +1419,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                   </p>
                   <button
                     onClick={exportJSONBackup}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gold hover:bg-gold-light text-ink font-bold text-xs shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-navy-light hover:bg-[#2E66C0] text-white font-bold text-xs shadow-lg transition-all"
                   >
                     <Download className="w-4 h-4" />
                     <span>Download Full Backup (JSON)</span>
@@ -1789,7 +1789,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                   saveAllChanges({ ...cmsData, services: updatedServices }, `Updated service: ${editingService.title}`);
                   setEditingService(null);
                 }}
-                className="px-5 py-2 rounded-lg bg-gold hover:bg-gold-light text-ink text-xs font-bold shadow"
+                className="px-5 py-2 rounded-lg bg-navy-light hover:bg-[#2E66C0] text-white text-xs font-bold shadow"
               >
                 Save Service
               </button>
@@ -1900,7 +1900,7 @@ export default function UltraPremiumEnterpriseAdmin() {
                   saveAllChanges({ ...cmsData, travelPackages: updated }, `Saved package: ${editingTravel.title}`);
                   setEditingTravel(null);
                 }}
-                className="px-5 py-2 rounded-lg bg-gold hover:bg-gold-light text-ink text-xs font-bold shadow"
+                className="px-5 py-2 rounded-lg bg-navy-light hover:bg-[#2E66C0] text-white text-xs font-bold shadow"
               >
                 Save Package
               </button>

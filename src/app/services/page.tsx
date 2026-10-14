@@ -8,6 +8,7 @@ import {
   Compass,
   Users2,
   MonitorSmartphone,
+  Home,
   ArrowRight,
   CheckCircle,
 } from 'lucide-react';
@@ -26,6 +27,7 @@ const ICON_MAP: Record<string, any> = {
   Compass,
   Users2,
   MonitorSmartphone,
+  Home,
 };
 
 export default function ServicesHubPage() {

@@ -103,7 +103,7 @@ export default function InteractiveBooking() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-6 py-2 bg-teal-deep text-white text-xs font-bold rounded-lg hover:bg-teal-mid transition-colors"
+                  className="mt-4 px-6 py-2 bg-navy text-white text-xs font-bold rounded-lg hover:bg-navy-light transition-colors"
                 >
                   Make Another Request
                 </button>
@@ -212,7 +212,7 @@ export default function InteractiveBooking() {
                       {...hoverButton}
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3 bg-gold hover:bg-gold-light text-ink font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm"
+                      className="w-full py-3 bg-navy hover:bg-navy-light text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm"
                     >
                       <span>{loading ? 'Sending...' : 'Request Package Quote'}</span>
                       <ArrowRight className="w-4 h-4" />

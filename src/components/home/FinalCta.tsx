@@ -39,7 +39,7 @@ export default function FinalCta() {
               <motion.button
                 {...hoverButton}
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gold hover:bg-gold-light text-ink font-bold text-xs sm:text-sm rounded-lg shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-navy-light hover:bg-[#2E66C0] text-white font-bold text-xs sm:text-sm rounded-lg shadow-md"
               >
                 <span>{t('cta_get_consultation', 'Get Free Consultation')}</span>
                 <ArrowRight className="w-4 h-4" />

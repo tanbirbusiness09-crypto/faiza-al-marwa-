@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { useLanguage } from '@/context/LanguageContext';
 import { NEWS_DATA } from '@/lib/data';
-import IconRenderer from '@/components/common/IconRenderer';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight, Clock, CalendarDays } from 'lucide-react';
 import { smoothEase, staggerContainer, staggerItem } from '@/lib/animations';
 
 export default function LatestNews() {
@@ -22,14 +22,14 @@ export default function LatestNews() {
         className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4"
       >
         <div className="max-w-xl">
-          <div className="eyebrow">{t('news_eyebrow', 'Stay updated')}</div>
+          <div className="eyebrow">{t('news_eyebrow', 'Insights from Riyadh')}</div>
           <h2 className="text-3xl sm:text-4xl text-ink font-display font-bold">
-            {t('news_title', 'Latest News & Regulatory Updates')}
+            {t('news_title', 'News, Guides & Regulatory Updates')}
           </h2>
         </div>
         <Link
-          href="#news"
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-teal-deep hover:text-gold transition-colors group"
+          href="/news"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-teal-deep hover:text-navy transition-colors group"
         >
           <span>{t('cta_view_all_news', 'View All Articles')}</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -52,30 +52,34 @@ export default function LatestNews() {
             className="bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
           >
             <div>
-              {/* Header Gradient */}
-              <div
-                className="h-32 p-4 flex items-end justify-between text-white"
-                style={{ background: item.gradient }}
-              >
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
-                  <IconRenderer name={item.iconName} className="w-4 h-4 text-gold-light" />
-                </div>
-                <div className="flex items-center gap-1 text-[10px] text-white/80">
+              {/* Cover Image */}
+              <Link href={`/news/${item.slug}`} className="block relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+                <span className="absolute left-3 top-3 text-[10px] font-bold uppercase tracking-wider bg-navy text-white px-2 py-0.5 rounded-full">
+                  {item.category}
+                </span>
+                <span className="absolute right-3 bottom-2.5 flex items-center gap-1 text-[10px] text-white/90">
                   <Clock className="w-3 h-3" />
                   <span>{item.readTime}</span>
-                </div>
-              </div>
+                </span>
+              </Link>
 
               {/* Body */}
               <div className="p-5">
                 <div className="flex items-center gap-2 text-[11px] text-softText mb-2">
-                  <span className="font-bold text-gold">{item.category}</span>
-                  <span>·</span>
+                  <CalendarDays className="w-3 h-3 text-navy" />
                   <span>{item.date}</span>
                 </div>
 
-                <h3 className="text-sm font-bold text-ink font-display group-hover:text-teal-deep transition-colors line-clamp-2 leading-snug">
-                  {item.title}
+                <h3 className="text-sm font-bold text-ink font-display group-hover:text-navy transition-colors line-clamp-2 leading-snug">
+                  <Link href={`/news/${item.slug}`}>{item.title}</Link>
                 </h3>
 
                 <p className="text-xs text-softText mt-2 leading-relaxed line-clamp-3">
@@ -86,8 +90,8 @@ export default function LatestNews() {
 
             <div className="p-5 pt-0">
               <Link
-                href="#booking"
-                className="inline-flex items-center gap-1 text-xs font-bold text-teal-deep group-hover:text-gold transition-colors"
+                href={`/news/${item.slug}`}
+                className="inline-flex items-center gap-1 text-xs font-bold text-teal-deep group-hover:text-navy transition-colors"
               >
                 <span>Read Article</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

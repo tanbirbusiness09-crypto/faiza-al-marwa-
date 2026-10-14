@@ -22,6 +22,11 @@ const config: Config = {
           light: "#E7C77A",
           dark: "#8C631F",
         },
+        navy: {
+          DEFAULT: "#003078",
+          light: "#1E4FA3",
+          dark: "#001F52",
+        },
         paper: {
           DEFAULT: "#F5F1E6",
           2: "#EFE9D8",

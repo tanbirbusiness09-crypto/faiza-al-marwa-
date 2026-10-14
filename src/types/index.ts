@@ -7,7 +7,7 @@ export interface TranslationDictionary {
 export interface ServiceItem {
   id: string;
   title: string;
-  category: 'travel' | 'business' | 'visa' | 'manpower' | 'digital';
+  category: 'travel' | 'business' | 'visa' | 'manpower' | 'digital' | 'real-estate';
   categoryLabel: string;
   color: string;
   iconName: string;
@@ -46,13 +46,16 @@ export interface DigitalServiceItem {
 
 export interface NewsItem {
   id: string;
+  slug: string;
   title: string;
   category: string;
   date: string;
   summary: string;
+  image: string;
   readTime: string;
   gradient: string;
   iconName: string;
+  body: string[];
 }
 
 export interface TestimonialItem {

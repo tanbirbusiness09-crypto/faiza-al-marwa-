@@ -81,13 +81,20 @@ export default function FeaturedServices() {
               )}
             </div>
 
-            <div>
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+              <Link
+                href={service.href}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-navy hover:bg-navy-light px-3.5 py-2 rounded-lg transition-colors group"
+              >
+                <span>Read More</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
               <Link
                 href="#booking"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-deep hover:text-gold transition-colors group"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-deep hover:text-navy transition-colors"
               >
                 <span>Request Details</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

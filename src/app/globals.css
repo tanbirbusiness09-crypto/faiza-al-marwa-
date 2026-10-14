@@ -10,6 +10,9 @@
     --teal-line: #2A6357;
     --gold: #B8862F;
     --gold-light: #E7C77A;
+    --navy: #003078;
+    --navy-light: #1E4FA3;
+    --navy-dark: #001F52;
     --paper: #F5F1E6;
     --paper-2: #EFE9D8;
     --paper-line: #DCD3B9;
@@ -275,6 +278,21 @@
 .animate-float {
   animation: saudiaFloat 5s ease-in-out infinite;
 }
+
+/* Hero headline typing cursor */
+.type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--gold);
+  font-weight: 700;
+  animation: cursorBlink 0.9s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 
 /* Accessibility: Respect Reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {

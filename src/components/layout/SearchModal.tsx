@@ -29,8 +29,8 @@ const SEARCH_ITEMS = [
   { tag: 'Job', label: 'Site Electrician (Riyadh Metro)', href: '/#manpower' },
   { tag: 'Job', label: 'HVAC Technician (Jeddah Project)', href: '/#manpower' },
   { tag: 'Job', label: 'Executive Driver (Riyadh)', href: '/#manpower' },
-  { tag: 'News', label: 'Understanding Workforce Mobilization Timelines', href: '/#news' },
-  { tag: 'News', label: 'New MISA Investor License Pathways', href: '/#news' },
+  { tag: 'News', label: 'How Long Does Workforce Mobilization Really Take in KSA?', href: '/news/workforce-mobilization-timelines-saudi-arabia' },
+  { tag: 'News', label: 'New MISA Pathways Make 100% Foreign Ownership Easier', href: '/news/misa-investor-license-pathways-foreign-entrepreneurs' },
   { tag: 'Support', label: 'Worker Status & Visa Verification Tracker', href: '/worker-status' },
 ];
 
@@ -123,7 +123,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${
                     activeCategory === cat
-                      ? 'bg-teal-deep text-white shadow-2xs'
+                      ? 'bg-navy text-white shadow-2xs'
                       : 'text-softText hover:text-ink hover:bg-paper-white'
                   }`}
                 >

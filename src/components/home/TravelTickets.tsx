@@ -61,7 +61,7 @@ export default function TravelTickets() {
               <motion.div {...hoverButton}>
                 <Link
                   href="#booking"
-                  className="block w-full px-4 py-3 bg-gold hover:bg-gold-light text-ink rounded-lg shadow-sm text-center transition-colors"
+                  className="block w-full px-4 py-3 bg-navy hover:bg-navy-light text-white rounded-lg shadow-sm text-center transition-colors"
                 >
                   <span className="block text-xs font-semibold leading-snug line-clamp-2">
                     {pkg.title}

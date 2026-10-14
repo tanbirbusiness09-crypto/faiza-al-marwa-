@@ -36,12 +36,14 @@ import {
   ShoppingCart,
   Palette,
   Cpu,
+  Home,
   ArrowRight,
   CheckCircle2,
   HelpCircle,
   Clock,
   PhoneCall,
   MessageCircle,
+  CalendarCheck,
 } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -79,6 +81,7 @@ const ICON_MAP: Record<string, any> = {
   ShoppingCart,
   Palette,
   Cpu,
+  Home,
 };
 
 export async function generateStaticParams() {
@@ -139,21 +142,29 @@ export default async function ServiceDetailPage({
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
-              href="/#booking"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-sm transition-all shadow-md active:scale-95"
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-navy-light hover:bg-[#2E66C0] text-white font-semibold text-sm transition-all shadow-md active:scale-95"
             >
-              <span>{service.ctaText}</span>
+              <CalendarCheck className="w-4 h-4 text-gold-light" />
+              <span>Get Appointment</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="https://wa.me/966500000000"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#1EA352] hover:bg-[#188B46] text-white font-semibold text-sm transition-all shadow-md active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
+            <Link
+              href="/#booking"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-paper/30 hover:border-gold text-paper hover:text-gold font-semibold text-sm transition-all bg-white/5"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
-              <span>Talk to an Advisor</span>
-            </a>
+              <span>{service.ctaText}</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -271,7 +282,7 @@ export default async function ServiceDetailPage({
               <div className="space-y-3">
                 <Link
                   href="/#booking"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-xs transition-all shadow"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-navy-light hover:bg-[#2E66C0] text-white font-semibold text-xs transition-all shadow"
                 >
                   <span>Submit Inquiry Online</span>
                   <ArrowRight className="w-3.5 h-3.5" />

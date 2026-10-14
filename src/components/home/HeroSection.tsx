@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { useLanguage } from '@/context/LanguageContext';
 import { ArrowRight, Plane, ShieldCheck, Check } from 'lucide-react';
 import { smoothEase, staggerContainer, staggerItem, hoverButton } from '@/lib/animations';
+import TypeWriter from '@/components/common/TypeWriter';
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -84,13 +85,20 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline (2 Lines Exact) */}
+          {/* Headline (Typewriter Entrance) */}
           <motion.h1
             variants={staggerItem}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px] min-h-[2.4em]"
           >
-            Beyond Journeys.<br />
-            Building Futures. <span className="text-gold font-bold">Together.</span>
+            <TypeWriter
+              parts={[
+                { text: 'Beyond Journeys.', br: true },
+                { text: 'Building Futures. ' },
+                { text: 'Together.', gold: true },
+              ]}
+              speed={55}
+              delay={500}
+            />
           </motion.h1>
 
           {/* Subtitle (3 Lines Clean Layout) */}
@@ -109,7 +117,7 @@ export default function HeroSection() {
             <motion.div {...hoverButton}>
               <Link
                 href="#featured-services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-gold hover:bg-gold-light text-ink font-bold text-sm shadow-md transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-navy hover:bg-navy-light text-white font-bold text-sm shadow-md transition-all"
               >
                 <span>{t('cta_explore_services', 'Explore Services')}</span>
                 <ArrowRight className="w-4 h-4" />

@@ -205,7 +205,7 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
                 className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'services'
-                    ? 'bg-teal-deep text-white shadow-sm'
+                    ? 'bg-navy text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
                 }`}
               >
@@ -310,7 +310,7 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'travel' ? null : 'travel')}
                 className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'travel'
-                    ? 'bg-teal-deep text-white shadow-sm'
+                    ? 'bg-navy text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
                 }`}
               >
@@ -375,7 +375,7 @@ export default function Header() {
                 onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
                 className={`inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   activeDropdown === 'company'
-                    ? 'bg-teal-deep text-white shadow-sm'
+                    ? 'bg-navy text-white shadow-sm'
                     : 'text-ink/90 hover:text-teal-deep hover:bg-teal-deep/8'
                 }`}
               >
@@ -480,7 +480,7 @@ export default function Header() {
                         }}
                         className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
                           language === item.code
-                            ? 'bg-teal-deep text-white font-bold'
+                            ? 'bg-navy text-white font-bold'
                             : 'text-ink hover:bg-paper hover:text-teal-deep'
                         }`}
                       >
@@ -493,11 +493,11 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Prominent Deep Teal Contact CTA Button */}
+            {/* Prominent Logo-Blue Contact CTA Button */}
             <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
               <button
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-teal-deep hover:bg-teal-mid text-white border border-teal-line font-bold text-xs shadow-md shadow-teal-deep/15 hover:shadow-lg hover:shadow-teal-deep/25 transition-all duration-200 whitespace-nowrap flex-shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-navy hover:bg-navy-light text-white border border-navy-light font-bold text-xs shadow-md shadow-navy/25 hover:shadow-lg hover:shadow-navy/35 transition-all duration-200 whitespace-nowrap flex-shrink-0"
               >
                 <FontAwesomeIcon icon={faPhoneVolume} className="w-3.5 h-3.5 text-gold-light" />
                 <span className="whitespace-nowrap">{t('nav_contact', 'Contact Us')}</span>
@@ -654,7 +654,7 @@ export default function Header() {
                     setMobileMenuOpen(false);
                     setConsultOpen(true);
                   }}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-teal-deep text-white font-bold text-sm shadow-md"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-navy text-white font-bold text-sm shadow-md"
                 >
                   <FontAwesomeIcon icon={faPhoneVolume} className="w-4 h-4 text-gold-light" />
                   <span>{t('cta_get_consultation', 'Get Free Consultation')}</span>

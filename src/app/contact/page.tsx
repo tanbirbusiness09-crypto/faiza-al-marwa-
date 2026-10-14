@@ -175,7 +175,7 @@ export default function ContactPage() {
                       setSubmitted(false);
                       setFormData({ name: '', email: '', phone: '', service: 'business', message: '' });
                     }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-xs transition-all shadow"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-navy hover:bg-navy-light text-white font-semibold text-xs transition-all shadow"
                   >
                     Send Another Message
                   </button>
@@ -265,7 +265,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-md bg-gold hover:bg-gold-light text-ink font-semibold text-xs transition-all shadow-md active:scale-95 disabled:opacity-50"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-md bg-navy hover:bg-navy-light text-white font-semibold text-xs transition-all shadow-md active:scale-95 disabled:opacity-50"
                     >
                       {loading ? <span>Sending...</span> : (
                         <>

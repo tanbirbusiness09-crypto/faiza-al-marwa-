@@ -126,7 +126,7 @@ export default function WorkerStatusPage() {
 
           <button
             type="submit"
-            className="w-full py-3.5 bg-gold hover:bg-gold-light text-ink font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-sm"
+            className="w-full py-3.5 bg-navy hover:bg-navy-light text-white font-bold rounded-xl text-sm transition-transform active:scale-95 shadow-sm"
           >
             Check Real-Time Status
           </button>
