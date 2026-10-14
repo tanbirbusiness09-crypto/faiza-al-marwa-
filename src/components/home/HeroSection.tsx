@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { useLanguage } from '@/context/LanguageContext';
-import { ArrowRight, Plane, ShieldCheck, Check } from 'lucide-react';
+import { ArrowRight, CalendarCheck, ShieldCheck, Check } from 'lucide-react';
 import { smoothEase, staggerContainer, staggerItem, hoverButton } from '@/lib/animations';
 import TypeWriter from '@/components/common/TypeWriter';
 
@@ -129,7 +129,7 @@ export default function HeroSection() {
                 href="#booking"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-ink/40 bg-paper-white hover:bg-paper text-ink font-bold text-sm shadow-2xs transition-all"
               >
-                <Plane className="w-4 h-4 text-teal-deep" />
+                <CalendarCheck className="w-4 h-4 text-teal-deep" />
                 <span>{t('cta_book_now', 'Book Now')}</span>
               </Link>
             </motion.div>

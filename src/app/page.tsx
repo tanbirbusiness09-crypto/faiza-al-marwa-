@@ -4,7 +4,7 @@ import ServiceFinder from '@/components/home/ServiceFinder';
 import QuickAccessGrid from '@/components/home/QuickAccessGrid';
 import FeaturedServices from '@/components/home/FeaturedServices';
 import TravelTickets from '@/components/home/TravelTickets';
-import InteractiveBooking from '@/components/home/InteractiveBooking';
+import AppointmentBooking from '@/components/home/AppointmentBooking';
 import ManpowerSection from '@/components/home/ManpowerSection';
 import DigitalServicesGrid from '@/components/home/DigitalServicesGrid';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
@@ -23,7 +23,7 @@ export default function HomePage() {
       <QuickAccessGrid />
       <FeaturedServices />
       <TravelTickets />
-      <InteractiveBooking />
+      <AppointmentBooking />
       <ManpowerSection />
       <DigitalServicesGrid />
       <WhyChooseUs />

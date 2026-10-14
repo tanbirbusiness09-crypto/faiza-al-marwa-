@@ -115,7 +115,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#booking" className="hover:text-gold-light transition-colors">
-                  Tour Package Booking
+                  Book an Appointment
                 </Link>
               </li>
               <li>

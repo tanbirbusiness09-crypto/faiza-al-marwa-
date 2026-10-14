@@ -10,16 +10,33 @@ import {
   Clock3,
   MessageCircle,
   Phone,
+  Building2,
+  Video,
 } from 'lucide-react';
 import { smoothEase, hoverButton } from '@/lib/animations';
 
-const TOUR_PACKAGES = [
-  'Istanbul Historical & Bosphorus Tour (6 Days)',
-  'Cairo Heritage & Nile Cruise (5 Days)',
-  'Gulf Commercial Circuit — Dubai (3 Days)',
-  'Kuala Lumpur & Genting Explorer (6 Days)',
-  'Bangkok & Pattaya Coastal Retreat (5 Days)',
-  'Bali Island Paradise Getaway (7 Days)',
+const SERVICE_OPTIONS = [
+  'Investor License & Business Setup',
+  'Manpower & Recruitment',
+  'Real Estate & Property Solutions',
+  'Travel & Tourism / Tour Packages',
+  'Visa & Immigration',
+  'Digital & IT Services',
+  'General Consultation',
+];
+
+const TIME_SLOTS = [
+  '09:00 – 12:00 — Morning',
+  '12:00 – 15:00 — Afternoon',
+  '15:00 – 18:00 — Evening',
+  'Flexible — anytime',
+];
+
+const MEETING_MODES = [
+  { label: 'Office Visit', icon: Building2 },
+  { label: 'Phone Call', icon: Phone },
+  { label: 'WhatsApp', icon: MessageCircle },
+  { label: 'Video Meeting', icon: Video },
 ];
 
 const FIELD =
@@ -30,35 +47,38 @@ const LABEL = 'block text-[11px] font-bold uppercase tracking-wide text-softText
 const ASSURANCES = [
   {
     icon: BadgeCheck,
-    title: 'Free quote within 24 hours',
-    desc: 'No prepayment — pricing confirmed by our Riyadh travel desk.',
+    title: 'Free first consultation',
+    desc: 'No fee to talk — you only proceed when the plan and price fit you.',
   },
   {
     icon: Clock3,
-    title: 'Fastest possible itinerary',
-    desc: 'Flight, hotel and transfers bundled into one confirmed plan.',
+    title: 'Slot confirmed within 1 hour',
+    desc: 'Our Riyadh team verifies availability and calls you back fast.',
   },
   {
-    icon: MessageCircle,
-    title: '24/7 WhatsApp support',
-    desc: 'One dedicated coordinator from enquiry to your return flight.',
+    icon: Video,
+    title: 'Meet however you prefer',
+    desc: 'Riyadh office, phone, WhatsApp or video call — your choice.',
   },
 ];
 
-export default function InteractiveBooking() {
+export default function AppointmentBooking() {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
+    service: SERVICE_OPTIONS[0],
+    date: '',
+    timeSlot: TIME_SLOTS[0],
+    mode: 'Office Visit',
     name: '',
     phone: '',
-    packageType: TOUR_PACKAGES[0],
-    departDate: '',
-    travelers: '2',
-    hotelPreference: '5-Star Standard',
+    email: '',
     notes: '',
   });
+
+  const today = new Date().toISOString().split('T')[0];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,11 +89,12 @@ export default function InteractiveBooking() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          type: 'tour_booking',
-          name: formData.name || 'Tour Inquirer',
+          type: 'appointment',
+          name: formData.name || 'Appointment Request',
           phone: formData.phone,
+          email: formData.email,
           details: {
-            bookingType: 'tour_package',
+            bookingType: 'appointment',
             ...formData,
           },
         }),
@@ -105,17 +126,17 @@ export default function InteractiveBooking() {
           <div className="lg:col-span-4 p-6 sm:p-9 lg:p-10 flex flex-col">
             <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-light mb-3 flex items-center gap-2">
               <span className="w-5 h-0.5 bg-gold-light" />
-              <span>{t('booking_eyebrow', 'Quick booking')}</span>
+              <span>{t('booking_eyebrow', 'Free consultation')}</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-display font-bold text-white leading-[1.15]">
-              {t('booking_title', 'Start Your Tour Booking')}
+              {t('booking_title', 'Book an Appointment')}
             </h2>
 
             <p className="mt-3 text-xs sm:text-[13.5px] leading-relaxed text-white/70">
               {t(
                 'booking_sub',
-                'Fill in a few details — our team will confirm availability, itineraries, and exact pricing with you directly.'
+                'Pick any service, choose your preferred date and time — our team confirms the slot and meets you however you like.'
               )}
             </p>
 
@@ -162,7 +183,7 @@ export default function InteractiveBooking() {
             </div>
           </div>
 
-          {/* ---------- Right: Form card ---------- */}
+          {/* ---------- Right: Appointment form card ---------- */}
           <div className="lg:col-span-8 lg:p-4 lg:pl-0">
             <div className="bg-paper-white rounded-none lg:rounded-2xl p-6 sm:p-8 text-ink shadow-2xl border-t lg:border-t-0 border-paper-line h-full">
               <AnimatePresence mode="wait">
@@ -178,21 +199,24 @@ export default function InteractiveBooking() {
                     <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-9 h-9" />
                     </div>
-                    <h3 className="text-xl font-bold font-display text-ink">Tour Inquiry Sent!</h3>
+                    <h3 className="text-xl font-bold font-display text-ink">
+                      Appointment Request Received!
+                    </h3>
                     <p className="text-xs sm:text-sm text-softText max-w-md mx-auto leading-relaxed">
-                      Our travel desk is preparing the best package rates for your trip. We will
-                      send details to <strong>{formData.phone}</strong> shortly.
+                      <strong>{formData.service}</strong> — {formData.date || 'date to be agreed'},{' '}
+                      {formData.timeSlot}. We will confirm your {formData.mode.toLowerCase()} slot at{' '}
+                      <strong>{formData.phone}</strong> within the hour.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
                       className="mt-4 px-6 py-2.5 bg-navy text-white text-xs font-bold rounded-lg hover:bg-navy-light transition-colors"
                     >
-                      Make Another Request
+                      Book Another Appointment
                     </button>
                   </motion.div>
                 ) : (
                   <motion.form
-                    key="tour-form"
+                    key="appointment-form"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -200,87 +224,86 @@ export default function InteractiveBooking() {
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
-                    {/* Step 1 — Trip details */}
+                    {/* Step 1 — Appointment details */}
                     <fieldset className="space-y-4">
                       <legend className="flex items-center gap-2.5 w-full mb-1">
                         <span className="w-6 h-6 rounded-full bg-navy text-white text-[11px] font-bold flex items-center justify-center shrink-0">
                           1
                         </span>
                         <span className="text-[11px] font-bold uppercase tracking-wider text-navy">
-                          Trip Details
+                          Appointment Details
                         </span>
                         <span className="flex-1 h-px bg-paper-line" />
                       </legend>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div className="sm:col-span-2">
-                          <label className={LABEL}>Tour Package</label>
-                          <select
-                            value={formData.packageType}
-                            onChange={(e) =>
-                              setFormData({ ...formData, packageType: e.target.value })
-                            }
-                            className={FIELD}
-                          >
-                            {TOUR_PACKAGES.map((pkg) => (
-                              <option key={pkg} value={pkg}>
-                                {pkg}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                        <div>
-                          <label className={LABEL}>Expected Travel Date</label>
-                          <input
-                            type="date"
-                            required
-                            value={formData.departDate}
-                            onChange={(e) =>
-                              setFormData({ ...formData, departDate: e.target.value })
-                            }
-                            className={FIELD}
-                          />
-                        </div>
-                        <div>
-                          <label className={LABEL}>Travelers</label>
-                          <select
-                            value={formData.travelers}
-                            onChange={(e) => setFormData({ ...formData, travelers: e.target.value })}
-                            className={FIELD}
-                          >
-                            <option value="1">1 Traveler</option>
-                            <option value="2">2 Travelers</option>
-                            <option value="3-5">3 – 5 (Family Group)</option>
-                            <option value="6+">6+ (Group / Corporate)</option>
-                          </select>
-                        </div>
+                      <div>
+                        <label className={LABEL}>Service / Subject</label>
+                        <select
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          className={FIELD}
+                        >
+                          {SERVICE_OPTIONS.map((svc) => (
+                            <option key={svc} value={svc}>
+                              {svc}
+                            </option>
+                          ))}
+                        </select>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className={LABEL}>Hotel Preference</label>
-                          <select
-                            value={formData.hotelPreference}
-                            onChange={(e) =>
-                              setFormData({ ...formData, hotelPreference: e.target.value })
-                            }
-                            className={FIELD}
-                          >
-                            <option value="4-Star Standard">4-Star Standard</option>
-                            <option value="5-Star Standard">5-Star Standard</option>
-                            <option value="5-Star Luxury">5-Star Luxury</option>
-                            <option value="Budget Friendly">Budget Friendly</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className={LABEL}>Special Requests (optional)</label>
+                          <label className={LABEL}>Preferred Date</label>
                           <input
-                            type="text"
-                            value={formData.notes}
-                            onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                            placeholder="e.g. window seat, vegan meals, guided tour..."
+                            type="date"
+                            required
+                            min={today}
+                            value={formData.date}
+                            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                             className={FIELD}
                           />
+                        </div>
+                        <div>
+                          <label className={LABEL}>Preferred Time</label>
+                          <select
+                            value={formData.timeSlot}
+                            onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
+                            className={FIELD}
+                          >
+                            {TIME_SLOTS.map((slot) => (
+                              <option key={slot} value={slot}>
+                                {slot}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className={LABEL}>How should we meet?</label>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                          {MEETING_MODES.map((opt) => {
+                            const active = formData.mode === opt.label;
+                            return (
+                              <button
+                                key={opt.label}
+                                type="button"
+                                onClick={() => setFormData({ ...formData, mode: opt.label })}
+                                aria-pressed={active}
+                                className={[
+                                  'flex flex-col items-center gap-1.5 px-2 py-3 rounded-lg border text-[11px] font-bold transition-all',
+                                  active
+                                    ? 'border-navy bg-navy text-white shadow-md shadow-navy/20'
+                                    : 'border-paper-line bg-white text-softText hover:border-navy/40 hover:text-navy',
+                                ].join(' ')}
+                              >
+                                <opt.icon
+                                  className={`w-4 h-4 ${active ? 'text-gold-light' : 'text-navy'}`}
+                                />
+                                <span className="text-center leading-tight">{opt.label}</span>
+                              </button>
+                            );
+                          })}
                         </div>
                       </div>
                     </fieldset>
@@ -320,23 +343,43 @@ export default function InteractiveBooking() {
                             className={FIELD}
                           />
                         </div>
-                        <div className="flex items-end">
-                          <motion.button
-                            {...hoverButton}
-                            type="submit"
-                            disabled={loading}
-                            className="w-full py-3 bg-navy hover:bg-navy-light text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-navy/20 transition-colors"
-                          >
-                            <span>{loading ? 'Sending...' : 'Request Package Quote'}</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </motion.button>
+                        <div>
+                          <label className={LABEL}>Email (optional)</label>
+                          <input
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="you@company.com"
+                            className={FIELD}
+                          />
                         </div>
                       </div>
 
-                      <p className="text-[11px] text-softText leading-relaxed">
-                        By submitting you agree to be contacted about this enquiry. No payment is
-                        taken at this stage.
-                      </p>
+                      <div>
+                        <label className={LABEL}>What would you like to discuss?</label>
+                        <textarea
+                          rows={3}
+                          value={formData.notes}
+                          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                          placeholder="Briefly describe your requirement, budget or question..."
+                          className={`${FIELD} resize-none leading-relaxed`}
+                        />
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+                        <motion.button
+                          {...hoverButton}
+                          type="submit"
+                          disabled={loading}
+                          className="sm:w-auto px-6 py-3 bg-navy hover:bg-navy-light text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-navy/20 transition-colors"
+                        >
+                          <span>{loading ? 'Sending...' : 'Confirm Appointment'}</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.button>
+                        <p className="text-[11px] text-softText leading-relaxed">
+                          Free &amp; no obligation — we reply within 1 hour during working days.
+                        </p>
+                      </div>
                     </fieldset>
                   </motion.form>
                 )}
