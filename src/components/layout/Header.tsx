@@ -493,17 +493,6 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Worker Status Button (Next to Contact Us) */}
-            <motion.div whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
-              <Link
-                href="/worker-status"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl border border-teal-deep/25 bg-paper-white hover:bg-teal-deep/5 text-ink hover:text-teal-deep font-bold text-xs shadow-2xs hover:border-teal-deep transition-all duration-200 whitespace-nowrap flex-shrink-0"
-              >
-                <FontAwesomeIcon icon={faIdCardClip} className="w-3.5 h-3.5 text-teal-deep" />
-                <span className="whitespace-nowrap">{t('nav_tracking', 'Worker Status')}</span>
-              </Link>
-            </motion.div>
-
             {/* Prominent Deep Teal Contact CTA Button */}
             <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.96 }} className="flex-shrink-0">
               <button

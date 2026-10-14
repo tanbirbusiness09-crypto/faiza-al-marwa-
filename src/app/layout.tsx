@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'FAIZA AL MARWA COMPANY LTD' }],
   icons: {
-    icon: '/images/logo.jpeg',
-    shortcut: '/images/logo.jpeg',
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
   },
 };
 

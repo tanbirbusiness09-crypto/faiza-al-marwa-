@@ -13,12 +13,12 @@ export default function BrandLogo({ className = '', isFooter = false }: BrandLog
   return (
     <Link href="/#home" className={`flex items-center gap-3 group select-none ${className}`}>
       {/* Brand Logo Image */}
-      <div className="relative w-10 h-10 flex-shrink-0 rounded-xl overflow-hidden border border-gold/40 shadow-sm group-hover:scale-105 transition-transform duration-300 bg-black">
+      <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-xl overflow-hidden border border-gold/40 shadow-sm group-hover:scale-105 transition-transform duration-300 bg-black">
         <Image
-          src="/images/logo.jpeg"
+          src="/images/logo.png"
           alt="FAIZA AL MARWA Logo"
           fill
-          sizes="40px"
+          sizes="56px"
           className="object-cover"
           priority
         />
@@ -36,13 +36,6 @@ export default function BrandLogo({ className = '', isFooter = false }: BrandLog
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
         </div>
-        <span
-          className={`text-[9.5px] font-semibold tracking-widest uppercase mt-1 ${
-            isFooter ? 'text-paper-white/60' : 'text-softText/80'
-          }`}
-        >
-          COMPANY LTD · شركة فيصة المروة
-        </span>
       </div>
     </Link>
   );
