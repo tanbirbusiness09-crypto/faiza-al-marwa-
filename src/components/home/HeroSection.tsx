@@ -75,7 +75,7 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="lg:col-span-6 space-y-6"
+          className="lg:col-span-6 space-y-4 sm:space-y-6"
         >
           {/* Location Badge */}
           <motion.div variants={staggerItem}>
@@ -85,10 +85,10 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline (Typewriter Entrance) — mobile-friendly size */}
+          {/* Headline (Typewriter) — sr-only on mobile (hidden visually, kept for SEO/a11y) */}
           <motion.h1
             variants={staggerItem}
-            className="block text-[27px] leading-[1.18] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-[54px] text-ink font-display font-bold tracking-tight max-w-[580px] min-h-[2.4em]"
+            className="sr-only sm:not-sr-only block text-[27px] leading-[1.18] sm:text-4xl sm:leading-[1.15] md:text-5xl lg:text-[54px] text-ink font-display font-bold tracking-tight max-w-[580px] min-h-[2.4em]"
           >
             <TypeWriter
               parts={[
@@ -101,10 +101,10 @@ export default function HeroSection() {
             />
           </motion.h1>
 
-          {/* Subtitle (3 Lines Clean Layout) */}
+          {/* Subtitle — hidden on mobile (sr-only keeps it crawlable) */}
           <motion.p
             variants={staggerItem}
-            className="text-[13.5px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.6] sm:leading-[1.65] max-w-[530px]"
+            className="sr-only sm:not-sr-only text-[13.5px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.6] sm:leading-[1.65] max-w-[530px]"
           >
             {t(
               'hero_lead',
