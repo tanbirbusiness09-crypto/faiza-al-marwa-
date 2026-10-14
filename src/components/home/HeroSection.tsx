@@ -12,7 +12,7 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="pt-10 sm:pt-14 pb-8 overflow-hidden relative">
+    <section id="home" className="pt-6 sm:pt-14 pb-6 sm:pb-8 overflow-hidden relative">
       {/* Luxury Animated Background Wave & Flight Contour Lines (Restored) */}
       <div className="hero-animated-bg">
         <svg className="bg-flowing-lines-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+      <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center relative z-10">
         {/* Left Copy Column with Staggered Motion Entrance */}
         <motion.div
           initial="hidden"
@@ -85,10 +85,10 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Headline (Typewriter Entrance) */}
+          {/* Headline (Typewriter Entrance) — hidden on mobile, sr-only keeps it for SEO */}
           <motion.h1
             variants={staggerItem}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px] min-h-[2.4em]"
+            className="hidden sm:block text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-ink font-display font-bold leading-[1.15] tracking-tight max-w-[580px] sm:min-h-[2.4em]"
           >
             <TypeWriter
               parts={[
@@ -104,7 +104,7 @@ export default function HeroSection() {
           {/* Subtitle (3 Lines Clean Layout) */}
           <motion.p
             variants={staggerItem}
-            className="text-[14px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.65] max-w-[530px]"
+            className="text-[14px] sm:text-[15px] md:text-[15.5px] text-text-soft leading-[1.65] max-w-[530px] line-clamp-3 sm:line-clamp-none"
           >
             {t(
               'hero_lead',
@@ -112,31 +112,37 @@ export default function HeroSection() {
             )}
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div variants={staggerItem} className="flex flex-wrap items-center gap-3.5 pt-2">
-            <motion.div {...hoverButton}>
+          {/* CTA Buttons — full-width app style on mobile */}
+          <motion.div
+            variants={staggerItem}
+            className="grid grid-cols-1 sm:flex sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-3.5 pt-1 sm:pt-2"
+          >
+            <motion.div {...hoverButton} className="w-full sm:w-auto">
               <Link
                 href="#featured-services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-navy hover:bg-navy-light text-white font-bold text-sm shadow-md transition-all"
+                className="btn-app bg-navy hover:bg-navy-light text-white shadow-md shadow-navy/25"
               >
                 <span>{t('cta_explore_services', 'Explore Services')}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
 
-            <motion.div {...hoverButton}>
+            <motion.div {...hoverButton} className="w-full sm:w-auto">
               <Link
                 href="#booking"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-ink/40 bg-paper-white hover:bg-paper text-ink font-bold text-sm shadow-2xs transition-all"
+                className="btn-app border border-ink/40 bg-paper-white hover:bg-paper text-ink shadow-2xs"
               >
-                <CalendarCheck className="w-4 h-4 text-teal-deep" />
+                <CalendarCheck className="w-4 h-4 text-navy" />
                 <span>{t('cta_book_now', 'Book Now')}</span>
               </Link>
             </motion.div>
           </motion.div>
 
           {/* Quick Access Pills with matching icons */}
-          <motion.div variants={staggerItem} className="flex flex-wrap items-center gap-5 pt-4 text-xs font-semibold text-ink">
+          <motion.div
+            variants={staggerItem}
+            className="flex flex-wrap items-center gap-x-5 gap-y-3 pt-2 sm:pt-4 text-xs font-semibold text-ink"
+          >
             <Link href="#featured-services" className="flex items-center gap-2 hover:text-gold transition-colors group">
               <span className="text-gold text-sm group-hover:scale-110 transition-transform">🏛️</span>
               <span>{t('cta_investor_license', 'Investor License')}</span>
@@ -153,13 +159,13 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Right Visual Composition (Arch Portal + Soaring Saudia Aircraft + Layered Passes) */}
-        <div className="lg:col-span-6 relative flex items-center justify-center min-h-[460px]">
+        <div className="lg:col-span-6 relative flex items-center justify-center min-h-[300px] sm:min-h-[460px]">
           {/* Soaring Saudia Airlines Commercial Aircraft (Marked Position with Motion) */}
           <motion.div
             initial={{ opacity: 0, x: -60, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: smoothEase }}
-            className="absolute -top-8 sm:-top-10 -left-6 sm:-left-10 w-[260px] sm:w-[330px] z-30 pointer-events-none animate-float"
+            className="absolute -top-4 sm:-top-10 -left-4 sm:-left-10 w-[200px] sm:w-[330px] z-30 pointer-events-none animate-float"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -186,7 +192,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.92, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: smoothEase }}
-            className="relative w-[300px] sm:w-[350px] h-[390px] sm:h-[440px] rounded-t-full rounded-b-2xl overflow-hidden shadow-2xl border-4 border-gold-light z-10 bg-[#F4EEDC] flex-shrink-0 -translate-x-6 sm:-translate-x-10 group"
+            className="relative w-[240px] sm:w-[350px] h-[310px] sm:h-[440px] rounded-t-full rounded-b-2xl overflow-hidden shadow-2xl border-4 border-gold-light z-10 bg-[#F4EEDC] flex-shrink-0 -translate-x-2 sm:-translate-x-10 group"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -201,7 +207,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50, y: 20 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45, ease: smoothEase }}
-            className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 w-[280px] sm:w-[340px] z-20"
+            className="hidden sm:block absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 w-[280px] sm:w-[340px] z-20"
           >
             {/* Rear Tilted Card (SETUP LLC Approved) */}
             <motion.div

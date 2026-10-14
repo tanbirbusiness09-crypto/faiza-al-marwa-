@@ -41,7 +41,7 @@ export default function LatestNews() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
         variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 pb-3 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4"
       >
         {NEWS_DATA.map((item) => (
           <motion.div
@@ -49,7 +49,7 @@ export default function LatestNews() {
             variants={staggerItem}
             whileHover={{ y: -6, scale: 1.01 }}
             transition={{ duration: 0.22, ease: smoothEase }}
-            className="bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
+            className="snap-start shrink-0 w-[80%] max-w-[340px] sm:w-[55%] md:w-auto md:max-w-none bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group"
           >
             <div>
               {/* Cover Image */}

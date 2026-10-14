@@ -306,3 +306,60 @@
   }
 }
 
+/* ============ MOBILE APP SHELL ============ */
+/* Reserve space for the fixed bottom tab bar */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Hide scrollbars on horizontal card rails */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* E-commerce style full-width app button */
+.btn-app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-app:active {
+  transform: scale(0.975);
+}
+@media (min-width: 640px) {
+  .btn-app {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+/* Touch-friendly tap targets on small screens */
+@media (max-width: 640px) {
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 48, 120, 0.12);
+  }
+
+  /* App-like tighter vertical rhythm between sections */
+  section.container-custom {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+

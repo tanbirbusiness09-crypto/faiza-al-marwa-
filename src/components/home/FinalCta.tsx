@@ -35,11 +35,11 @@ export default function FinalCta() {
               {t('final_sub', 'Talk to our team in Riyadh and get the exact solution tailored for your business or personal journey.')}
             </p>
 
-            <div className="pt-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="pt-6 grid grid-cols-1 sm:flex sm:flex-wrap items-stretch sm:items-center justify-center gap-3">
               <motion.button
                 {...hoverButton}
                 onClick={() => setConsultOpen(true)}
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-navy-light hover:bg-[#2E66C0] text-white font-bold text-xs sm:text-sm rounded-lg shadow-md"
+                className="btn-app bg-navy-light hover:bg-[#2E66C0] text-white shadow-md"
               >
                 <span>{t('cta_get_consultation', 'Get Free Consultation')}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -50,7 +50,7 @@ export default function FinalCta() {
                 href={`https://wa.me/${APP_CONFIG.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#1EA352] hover:bg-[#188B46] text-white font-bold text-xs sm:text-sm rounded-lg shadow-md"
+                className="btn-app bg-[#1EA352] hover:bg-[#188B46] text-white shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t('cta_whatsapp', 'WhatsApp Us')}</span>
@@ -59,7 +59,7 @@ export default function FinalCta() {
               <motion.a
                 {...hoverButton}
                 href={`tel:${APP_CONFIG.phone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/40 hover:border-gold-light text-white hover:text-gold-light font-bold text-xs sm:text-sm rounded-lg"
+                className="btn-app border border-white/40 hover:border-gold-light text-white hover:text-gold-light"
               >
                 <PhoneCall className="w-4 h-4 text-gold-light" />
                 <span>{APP_CONFIG.phone}</span>

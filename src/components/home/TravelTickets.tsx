@@ -31,7 +31,7 @@ export default function TravelTickets() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
         variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 pb-3 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3"
       >
         {TRAVEL_PACKAGES_DATA.map((pkg) => (
           <motion.div
@@ -39,7 +39,7 @@ export default function TravelTickets() {
             variants={staggerItem}
             whileHover={{ y: -6, scale: 1.01 }}
             transition={{ duration: 0.22, ease: smoothEase }}
-            className="bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
+            className="snap-start shrink-0 w-[78%] max-w-[330px] sm:w-[58%] md:w-auto md:max-w-none bg-paper-white border border-paper-line rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col"
           >
             {/* Destination Image + Place */}
             <div className="relative aspect-[4/3] overflow-hidden">

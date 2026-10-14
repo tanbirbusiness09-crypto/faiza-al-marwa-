@@ -371,7 +371,7 @@ export default function AppointmentBooking() {
                           {...hoverButton}
                           type="submit"
                           disabled={loading}
-                          className="sm:w-auto px-6 py-3 bg-navy hover:bg-navy-light text-white font-bold rounded-lg text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-navy/20 transition-colors"
+                          className="btn-app bg-navy hover:bg-navy-light text-white shadow-md shadow-navy/20"
                         >
                           <span>{loading ? 'Sending...' : 'Confirm Appointment'}</span>
                           <ArrowRight className="w-4 h-4" />

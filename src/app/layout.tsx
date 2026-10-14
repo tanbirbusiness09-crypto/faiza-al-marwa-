@@ -4,11 +4,13 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFab from '@/components/layout/WhatsAppFab';
+import MobileTabBar from '@/components/layout/MobileTabBar';
 import InteractiveLuxuryBackground from '@/components/common/InteractiveLuxuryBackground';
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1.0,
+  themeColor: '#F5F1E6',
 };
 
 export const metadata: Metadata = {
@@ -55,6 +57,7 @@ export default function RootLayout({
           <main className="flex-grow relative z-10">{children}</main>
           <Footer />
           <WhatsAppFab />
+          <MobileTabBar />
         </LanguageProvider>
       </body>
     </html>
